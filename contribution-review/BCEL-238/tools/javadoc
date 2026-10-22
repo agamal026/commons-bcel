@@ -1,0 +1,12 @@
+#!/usr/bin/env python3
+"""Launch the installed JDK Javadoc module when its native launcher is absent."""
+import os
+import sys
+
+arguments = sys.argv[1:]
+vm_arguments = [argument[2:] for argument in arguments if argument.startswith("-J")]
+tool_arguments = [argument for argument in arguments if not argument.startswith("-J")]
+os.execv(
+    "/usr/lib/jvm/java-17-openjdk-amd64/bin/java",
+    ["java", *vm_arguments, "-m", "jdk.javadoc/jdk.javadoc.internal.tool.Main", *tool_arguments],
+)

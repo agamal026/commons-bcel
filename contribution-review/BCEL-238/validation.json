@@ -1,0 +1,5512 @@
+{
+  "source_commit": "4ec24e4626250c4411388323a05c95d50673e218",
+  "source_tree": "f2d597d840a5b09af42518f21ceeaad8ebdfbf98",
+  "upstream_base": "0d7c17fb365e4be8e3b66018548e7ebbda0e9507",
+  "environment": {
+    "maven": "3.9.11",
+    "jdk": "OpenJDK 17.0.20",
+    "os": "Linux amd64",
+    "compiler_release": "8"
+  },
+  "source_identity_note": "Focused runs preceded the commit. The baseline used unchanged production from upstream_base plus the two regression test files. Those test files were byte-identical in the fixed focused run; the fixed run's four-file manifest matches source_commit. All full runs used a clean checkout at source_commit.",
+  "sanitization": "Public logs replace machine-local checkout, tool, cache and home paths with labeled placeholders. Original log hashes and new public log hashes are distinct. Maven settings contents and XML system properties are not published.",
+  "runs": [
+    {
+      "label": "baseline",
+      "cwd": "<CHECKOUT>",
+      "command": [
+        "<TOOLS>/apache-maven-3.9.11/bin/mvn",
+        "--settings",
+        "<TOOLS>/maven-settings.xml",
+        "--errors",
+        "--show-version",
+        "--batch-mode",
+        "--no-transfer-progress",
+        "-Dmaven.repo.local=<MAVEN_REPOSITORY>",
+        "-DtrimStackTrace=false",
+        "-Dtest=BootstrapMethod*",
+        "clean",
+        "test"
+      ],
+      "started_at": "2026-10-22T11:20:57.255347+00:00",
+      "head": "0d7c17fb365e4be8e3b66018548e7ebbda0e9507",
+      "head_tree": "0b4c629fbffb891d7e71bed1c7afd8a5d369a841",
+      "status": " M src/test/java/org/apache/bcel/classfile/BootstrapMethodCopyTest.java\n?? src/test/java/org/apache/bcel/classfile/BootstrapMethodTest.java\n",
+      "files": {
+        "src/main/java/org/apache/bcel/classfile/BootstrapMethod.java": {
+          "bytes": 6510,
+          "sha256": "bb73e23fdc6dec7ccba9afee2f60926509b9639d74c0b0575e931e0916100931",
+          "git_blob": "c44af88964463cf079c61ca9d521a02d314eba02"
+        },
+        "src/test/java/org/apache/bcel/classfile/BootstrapMethodTest.java": {
+          "bytes": 4714,
+          "sha256": "dcbbb983a2b1e4a5aa1bd0d79a8b3cc982dd552dba0e63e71f5c5663ce60dbea",
+          "git_blob": "84f50d388476d3056923428279344a90d6a3470e"
+        },
+        "src/test/java/org/apache/bcel/classfile/BootstrapMethodCopyTest.java": {
+          "bytes": 2617,
+          "sha256": "4ff460d547bc26c5a2ecc07fc79655a5837e933be56e9a51c72e9fd97a837034",
+          "git_blob": "fcf9033e54db56d597fb54afb7972886ff3e2a45"
+        },
+        "src/changes/changes.xml": {
+          "bytes": 93730,
+          "sha256": "ec3c65fcdecb0e6810078ed986b17eb98d7d4d804de401fa2272e1c99decf98b",
+          "git_blob": "26394405239f13fc43841100f1baa992ecea4980"
+        }
+      },
+      "completed_at": "2026-10-22T11:20:59.484451+00:00",
+      "exit_code": 1,
+      "suites": [],
+      "totals": {
+        "reported": 0,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": 0
+      },
+      "raw_log_sha256": "c11a7535077676528a1aa4f22b09beeb0229caa35ca00eb0225f5090edb459e5",
+      "public_log": {
+        "path": "logs/00-baseline.log",
+        "bytes": 16963,
+        "sha256": "c4bd9149c6ef539c88c9005dff776bd22377ad1e84759a8995672057a86c6923",
+        "sanitized": true
+      },
+      "test_outcomes": [],
+      "skipped_cases": [],
+      "error_cases": []
+    },
+    {
+      "label": "baseline-network",
+      "cwd": "<CHECKOUT>",
+      "command": [
+        "<TOOLS>/apache-maven-3.9.11/bin/mvn",
+        "--settings",
+        "<TOOLS>/maven-settings.xml",
+        "--errors",
+        "--show-version",
+        "--batch-mode",
+        "--no-transfer-progress",
+        "-Dmaven.repo.local=<MAVEN_REPOSITORY>",
+        "-DtrimStackTrace=false",
+        "-Dtest=BootstrapMethod*",
+        "clean",
+        "test"
+      ],
+      "started_at": "2026-10-22T11:21:36.938864+00:00",
+      "head": "0d7c17fb365e4be8e3b66018548e7ebbda0e9507",
+      "head_tree": "0b4c629fbffb891d7e71bed1c7afd8a5d369a841",
+      "status": " M src/test/java/org/apache/bcel/classfile/BootstrapMethodCopyTest.java\n?? src/test/java/org/apache/bcel/classfile/BootstrapMethodTest.java\n",
+      "files": {
+        "src/main/java/org/apache/bcel/classfile/BootstrapMethod.java": {
+          "bytes": 6510,
+          "sha256": "bb73e23fdc6dec7ccba9afee2f60926509b9639d74c0b0575e931e0916100931",
+          "git_blob": "c44af88964463cf079c61ca9d521a02d314eba02"
+        },
+        "src/test/java/org/apache/bcel/classfile/BootstrapMethodTest.java": {
+          "bytes": 4714,
+          "sha256": "dcbbb983a2b1e4a5aa1bd0d79a8b3cc982dd552dba0e63e71f5c5663ce60dbea",
+          "git_blob": "84f50d388476d3056923428279344a90d6a3470e"
+        },
+        "src/test/java/org/apache/bcel/classfile/BootstrapMethodCopyTest.java": {
+          "bytes": 2617,
+          "sha256": "4ff460d547bc26c5a2ecc07fc79655a5837e933be56e9a51c72e9fd97a837034",
+          "git_blob": "fcf9033e54db56d597fb54afb7972886ff3e2a45"
+        },
+        "src/changes/changes.xml": {
+          "bytes": 93730,
+          "sha256": "ec3c65fcdecb0e6810078ed986b17eb98d7d4d804de401fa2272e1c99decf98b",
+          "git_blob": "26394405239f13fc43841100f1baa992ecea4980"
+        }
+      },
+      "completed_at": "2026-10-22T11:21:56.343214+00:00",
+      "exit_code": 1,
+      "suites": [
+        {
+          "name": "org.apache.bcel.classfile.BootstrapMethodCopyTest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.BootstrapMethodTest",
+          "reported": 7,
+          "failures": 4,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 3,
+          "failed_cases": [
+            "testDumpChangesOnlyAfterExplicitUpdate",
+            "testSetterCopiesArguments",
+            "testConstructorCopiesArguments",
+            "testGetterReturnsSnapshot"
+          ]
+        }
+      ],
+      "totals": {
+        "reported": 9,
+        "failures": 4,
+        "errors": 0,
+        "skipped": 0,
+        "passed": 5
+      },
+      "raw_log_sha256": "a3f5c9d459bbe03021e4ca12858139286781a2c12e01b2432794a9f01e07b62a",
+      "public_log": {
+        "path": "logs/01-baseline-network.log",
+        "bytes": 16455,
+        "sha256": "384efbf54cc046d75f435130f4109459bcb5ce26b59c3a2d347eb253edf3f0bb",
+        "sanitized": true
+      },
+      "test_outcomes": [
+        {
+          "class": "org.apache.bcel.classfile.BootstrapMethodCopyTest",
+          "name": "testCopyCanBeUpdatedIndependently",
+          "outcome": "passed"
+        },
+        {
+          "class": "org.apache.bcel.classfile.BootstrapMethodCopyTest",
+          "name": "testCopyConstructorCanBeUpdatedIndependently",
+          "outcome": "passed"
+        },
+        {
+          "class": "org.apache.bcel.classfile.BootstrapMethodTest",
+          "name": "testDumpChangesOnlyAfterExplicitUpdate",
+          "outcome": "failed",
+          "detail": "array contents differ at index [5], expected: <10> but was: <99>"
+        },
+        {
+          "class": "org.apache.bcel.classfile.BootstrapMethodTest",
+          "name": "testSetterCopiesArguments",
+          "outcome": "failed",
+          "detail": "array contents differ at index [0], expected: <20> but was: <999>"
+        },
+        {
+          "class": "org.apache.bcel.classfile.BootstrapMethodTest",
+          "name": "testConstructorCopiesArguments",
+          "outcome": "failed",
+          "detail": "array contents differ at index [0], expected: <10> but was: <999>"
+        },
+        {
+          "class": "org.apache.bcel.classfile.BootstrapMethodTest",
+          "name": "testSetterNormalizesNull",
+          "outcome": "passed"
+        },
+        {
+          "class": "org.apache.bcel.classfile.BootstrapMethodTest",
+          "name": "testReadAndDumpArguments",
+          "outcome": "passed"
+        },
+        {
+          "class": "org.apache.bcel.classfile.BootstrapMethodTest",
+          "name": "testConstructorNormalizesNull",
+          "outcome": "passed"
+        },
+        {
+          "class": "org.apache.bcel.classfile.BootstrapMethodTest",
+          "name": "testGetterReturnsSnapshot",
+          "outcome": "failed",
+          "detail": "array contents differ at index [0], expected: <10> but was: <999>"
+        }
+      ],
+      "skipped_cases": [],
+      "error_cases": [
+        {
+          "class": "org.apache.bcel.classfile.BootstrapMethodTest",
+          "name": "testDumpChangesOnlyAfterExplicitUpdate",
+          "outcome": "failed",
+          "detail": "array contents differ at index [5], expected: <10> but was: <99>"
+        },
+        {
+          "class": "org.apache.bcel.classfile.BootstrapMethodTest",
+          "name": "testSetterCopiesArguments",
+          "outcome": "failed",
+          "detail": "array contents differ at index [0], expected: <20> but was: <999>"
+        },
+        {
+          "class": "org.apache.bcel.classfile.BootstrapMethodTest",
+          "name": "testConstructorCopiesArguments",
+          "outcome": "failed",
+          "detail": "array contents differ at index [0], expected: <10> but was: <999>"
+        },
+        {
+          "class": "org.apache.bcel.classfile.BootstrapMethodTest",
+          "name": "testGetterReturnsSnapshot",
+          "outcome": "failed",
+          "detail": "array contents differ at index [0], expected: <10> but was: <999>"
+        }
+      ]
+    },
+    {
+      "label": "focused-fixed",
+      "cwd": "<CHECKOUT>",
+      "command": [
+        "<TOOLS>/apache-maven-3.9.11/bin/mvn",
+        "--settings",
+        "<TOOLS>/maven-settings.xml",
+        "--errors",
+        "--show-version",
+        "--batch-mode",
+        "--no-transfer-progress",
+        "-Dmaven.repo.local=<MAVEN_REPOSITORY>",
+        "-DtrimStackTrace=false",
+        "-Dtest=BootstrapMethod*",
+        "clean",
+        "test"
+      ],
+      "started_at": "2026-10-22T11:22:29.972576+00:00",
+      "head": "0d7c17fb365e4be8e3b66018548e7ebbda0e9507",
+      "head_tree": "0b4c629fbffb891d7e71bed1c7afd8a5d369a841",
+      "status": " M src/changes/changes.xml\n M src/main/java/org/apache/bcel/classfile/BootstrapMethod.java\n M src/test/java/org/apache/bcel/classfile/BootstrapMethodCopyTest.java\n?? src/test/java/org/apache/bcel/classfile/BootstrapMethodTest.java\n",
+      "files": {
+        "src/main/java/org/apache/bcel/classfile/BootstrapMethod.java": {
+          "bytes": 6903,
+          "sha256": "a2bd0c45d3b566162d06f51f412ddd086b7cf44963f7ec61379df5d275224a09",
+          "git_blob": "c8a64f8bbfd174dfd44985eb2f287385efc9e49e"
+        },
+        "src/test/java/org/apache/bcel/classfile/BootstrapMethodTest.java": {
+          "bytes": 4714,
+          "sha256": "dcbbb983a2b1e4a5aa1bd0d79a8b3cc982dd552dba0e63e71f5c5663ce60dbea",
+          "git_blob": "84f50d388476d3056923428279344a90d6a3470e"
+        },
+        "src/test/java/org/apache/bcel/classfile/BootstrapMethodCopyTest.java": {
+          "bytes": 2617,
+          "sha256": "4ff460d547bc26c5a2ecc07fc79655a5837e933be56e9a51c72e9fd97a837034",
+          "git_blob": "fcf9033e54db56d597fb54afb7972886ff3e2a45"
+        },
+        "src/changes/changes.xml": {
+          "bytes": 93893,
+          "sha256": "b76b50295955d3d95c5ccd00ef03d8ad4e260d28779a83a4d1a996e4be2c1f39",
+          "git_blob": "6583579a58010c2ae6ae2dbe8639f0d0f7297429"
+        }
+      },
+      "completed_at": "2026-10-22T11:22:42.928569+00:00",
+      "exit_code": 0,
+      "suites": [
+        {
+          "name": "org.apache.bcel.classfile.BootstrapMethodCopyTest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.BootstrapMethodTest",
+          "reported": 7,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 7,
+          "failed_cases": []
+        }
+      ],
+      "totals": {
+        "reported": 9,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": 9
+      },
+      "raw_log_sha256": "7d63cb2f3f1c3816fd54f4ab804f4a246680b00fdfb84d4689af2298a5362682",
+      "public_log": {
+        "path": "logs/02-focused-fixed.log",
+        "bytes": 4829,
+        "sha256": "906e2b01133b409d713c6693d47f5eb70104dfa640ddbc629346481c555703f1",
+        "sanitized": true
+      },
+      "test_outcomes": [
+        {
+          "class": "org.apache.bcel.classfile.BootstrapMethodCopyTest",
+          "name": "testCopyCanBeUpdatedIndependently",
+          "outcome": "passed"
+        },
+        {
+          "class": "org.apache.bcel.classfile.BootstrapMethodCopyTest",
+          "name": "testCopyConstructorCanBeUpdatedIndependently",
+          "outcome": "passed"
+        },
+        {
+          "class": "org.apache.bcel.classfile.BootstrapMethodTest",
+          "name": "testDumpChangesOnlyAfterExplicitUpdate",
+          "outcome": "passed"
+        },
+        {
+          "class": "org.apache.bcel.classfile.BootstrapMethodTest",
+          "name": "testSetterCopiesArguments",
+          "outcome": "passed"
+        },
+        {
+          "class": "org.apache.bcel.classfile.BootstrapMethodTest",
+          "name": "testConstructorCopiesArguments",
+          "outcome": "passed"
+        },
+        {
+          "class": "org.apache.bcel.classfile.BootstrapMethodTest",
+          "name": "testSetterNormalizesNull",
+          "outcome": "passed"
+        },
+        {
+          "class": "org.apache.bcel.classfile.BootstrapMethodTest",
+          "name": "testReadAndDumpArguments",
+          "outcome": "passed"
+        },
+        {
+          "class": "org.apache.bcel.classfile.BootstrapMethodTest",
+          "name": "testConstructorNormalizesNull",
+          "outcome": "passed"
+        },
+        {
+          "class": "org.apache.bcel.classfile.BootstrapMethodTest",
+          "name": "testGetterReturnsSnapshot",
+          "outcome": "passed"
+        }
+      ],
+      "skipped_cases": [],
+      "error_cases": []
+    },
+    {
+      "label": "default",
+      "cwd": "<CHECKOUT>",
+      "command": [
+        "<TOOLS>/apache-maven-3.9.11/bin/mvn",
+        "--settings",
+        "<TOOLS>/maven-settings.xml",
+        "--errors",
+        "--show-version",
+        "--batch-mode",
+        "--no-transfer-progress",
+        "-Dmaven.repo.local=<MAVEN_REPOSITORY>",
+        "-DtrimStackTrace=false",
+        "-Dcommons.compiler.javadoc=<TOOLS>/javadoc"
+      ],
+      "started_at": "2026-10-22T11:49:48.190266+00:00",
+      "head": "4ec24e4626250c4411388323a05c95d50673e218",
+      "head_tree": "f2d597d840a5b09af42518f21ceeaad8ebdfbf98",
+      "status": "",
+      "files": {
+        "src/main/java/org/apache/bcel/classfile/BootstrapMethod.java": {
+          "bytes": 6903,
+          "sha256": "a2bd0c45d3b566162d06f51f412ddd086b7cf44963f7ec61379df5d275224a09",
+          "git_blob": "c8a64f8bbfd174dfd44985eb2f287385efc9e49e"
+        },
+        "src/test/java/org/apache/bcel/classfile/BootstrapMethodTest.java": {
+          "bytes": 4714,
+          "sha256": "dcbbb983a2b1e4a5aa1bd0d79a8b3cc982dd552dba0e63e71f5c5663ce60dbea",
+          "git_blob": "84f50d388476d3056923428279344a90d6a3470e"
+        },
+        "src/test/java/org/apache/bcel/classfile/BootstrapMethodCopyTest.java": {
+          "bytes": 2617,
+          "sha256": "4ff460d547bc26c5a2ecc07fc79655a5837e933be56e9a51c72e9fd97a837034",
+          "git_blob": "fcf9033e54db56d597fb54afb7972886ff3e2a45"
+        },
+        "src/changes/changes.xml": {
+          "bytes": 93893,
+          "sha256": "b76b50295955d3d95c5ccd00ef03d8ad4e260d28779a83a4d1a996e4be2c1f39",
+          "git_blob": "6583579a58010c2ae6ae2dbe8639f0d0f7297429"
+        }
+      },
+      "completed_at": "2026-10-22T11:50:28.118905+00:00",
+      "exit_code": 1,
+      "suites": [
+        {
+          "name": "org.apache.bcel.AnnotationAccessFlagTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.AnnotationDefaultAttributeTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.AnnotationEntryTest",
+          "reported": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 4,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.AnonymousClassTest",
+          "reported": 5,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 5,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.ConstTest",
+          "reported": 8,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 8,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.CounterVisitorTest",
+          "reported": 39,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 39,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.ElementValueGenTest",
+          "reported": 11,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 11,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.EnclosingMethodAttributeTest",
+          "reported": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 3,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.EnumAccessFlagTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.HandleTest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.InstructionFinderTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.LocalVariableTypeTableTest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.OssFuzzTest",
+          "reported": 9,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 9,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.PLSETest",
+          "reported": 7,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 7,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.PerformanceTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.AttributeNestingTest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.AttributeTagTest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.BootstrapMethodCopyTest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.BootstrapMethodTest",
+          "reported": 7,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 7,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.ClassParserTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.CodeTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.ConstantDynamicTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.ConstantPoolModuleAccessTest",
+          "reported": 78,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 78,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.ConstantPoolModuleToStringTest",
+          "reported": 14,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 14,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.ConstantPoolTest",
+          "reported": 5,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 5,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.ConstantTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.DeprecatedTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.DumpU2OverflowTest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.ElementValueNestingTest",
+          "reported": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 3,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.FieldTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.InvalidMethodSigantureTest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.JavaClassCyclicTest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.JavaClassTest",
+          "reported": 2454,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2454,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.Jira368Test",
+          "reported": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 3,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.LocalVariableTableTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.LocalVariableTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.PMGClassTest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.PermittedSubclassesTest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.RecordTest",
+          "reported": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 6,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.SignatureTest",
+          "reported": 5,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 5,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.StackMapTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.SyntheticTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.UnknownTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.UtilityEncodeDecodeTest",
+          "reported": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 3,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.UtilityTest",
+          "reported": 14,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 14,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.AnnotationGenTest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.ArrayTypeTest",
+          "reported": 9,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 9,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.BREAKPOINTTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.BasicTypeTest",
+          "reported": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 3,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.BranchHandleTest",
+          "reported": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 4,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.ClassGenTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.ConstantPoolGenKeyCollisionTest",
+          "reported": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 4,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.D2FTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.D2ITest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.D2LTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.DADDTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.DDIVTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.DMULTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.DNEGTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.DREMTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.DSUBTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.EmptyVisitorTest",
+          "reported": 18,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 18,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.F2DTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.F2ITest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.F2LTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.FADDTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.FDIVTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.FMULTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.FNEGTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.FREMTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.FSUBTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.FieldAnnotationsTest",
+          "reported": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 3,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.FieldGenTest",
+          "reported": 7,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 1,
+          "passed": 6,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.GETFIELDTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.GeneratingAnnotatedClassesTest",
+          "reported": 9,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 9,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.I2BTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.I2CTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.I2DTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.I2FTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.I2LTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.I2STest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.IADDTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.IANDTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.IDIVTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.IINCTest",
+          "reported": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 4,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.IMPDEP1Test",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.IMPDEP2Test",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.IMULTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.INEGTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.INVOKEDYNAMICTest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.INVOKEINTERFACETest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.IORTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.IREMTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.ISHLTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.ISHRTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.ISUBTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.IXORTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.InstructionFactoryTest",
+          "reported": 5,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 5,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.InstructionHandleTest",
+          "reported": 5,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 5,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.JdkGenericDumpTest",
+          "reported": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 3,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.JiraBcel362Test",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.L2DTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.L2FTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.L2ITest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.LADDTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.LANDTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.LCMPTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.LDIVTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.LMULTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.LNEGTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.LOOKUPSWITCHTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.LORTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.LREMTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.LSHLTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.LSHRTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.LSUBTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.LXORTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.LocalVariableInstructionTest",
+          "reported": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 3,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.MULTIANEWARRAYTest",
+          "reported": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 3,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.MethodGenTest",
+          "reported": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 6,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.ObjectTypeTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.PUTFIELDTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.PUTSTATICTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.ParameterAnnotationVisibilityTest",
+          "reported": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 3,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.SWITCHTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.SetIndexBoundsTest",
+          "reported": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 3,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.SwitchAllocationTest",
+          "reported": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 6,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.TypeTest",
+          "reported": 28,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 28,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.util.BCELifierTest",
+          "reported": 58,
+          "failures": 0,
+          "errors": 12,
+          "skipped": 0,
+          "passed": 46,
+          "failed_cases": [
+            "testJavapCompare(String)[1]",
+            "testJavapCompare(String)[2]",
+            "testJavapCompare(String)[3]",
+            "testJavapCompare(String)[4]",
+            "testJavapCompare(String)[5]",
+            "testJavapCompare(String)[6]",
+            "testJavapCompare(String)[7]",
+            "testJavapCompare(String)[8]",
+            "testJavapCompareJava25KnownBroken(String)[1]",
+            "testJavapCompareJava25KnownBroken(String)[2]",
+            "testStackMap(String)[1]",
+            "testStackMap(String)[2]"
+          ]
+        },
+        {
+          "name": "org.apache.bcel.util.Class2HTMLTest",
+          "reported": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 3,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.util.Class2HTMLTraversalTest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.util.Class2HTMLXSSTest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.util.ClassPathRepositoryTest",
+          "reported": 8,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 8,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.util.ClassPathTest",
+          "reported": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 6,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.util.CodeHTMLNarrowingTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.util.InstructionFinderTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.util.LruCacheClassPathRepositoryTest",
+          "reported": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 3,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.util.ModularRuntimeImageTest",
+          "reported": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 4,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.util.RepositoryNameMismatchTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.JiraBcel291Test",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 1,
+          "passed": 0,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.JiraBcel369Test",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 1,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.JiraBcel370Test",
+          "reported": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 3,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.TransitiveHullTest",
+          "reported": 5,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 5,
+          "passed": 0,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.VerifierArrayAccessTest",
+          "reported": 16,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 16,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.VerifierFactoryTest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.VerifierInvokeTest",
+          "reported": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 4,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.VerifierMainTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.VerifierReturnTest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.VerifierTest",
+          "reported": 10,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 1,
+          "passed": 9,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.VerifierThrowTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.VerifyBadClassesTest",
+          "reported": 9,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 9,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.VerifyJavaHomesTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 1,
+          "passed": 0,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.VerifyJavaMathTest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 2,
+          "passed": 0,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.VerifyJavaUtilTest",
+          "reported": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 3,
+          "passed": 0,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.statics.LocalVariableInfoTest",
+          "reported": 5,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 5,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.statics.Pass2VerifierTest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.statics.Pass3aVerifierTest",
+          "reported": 12,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 12,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.structurals.InstConstraintVisitorTest",
+          "reported": 12,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 12,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.structurals.UninitializedObjectTypeTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        }
+      ],
+      "totals": {
+        "reported": 3090,
+        "failures": 0,
+        "errors": 12,
+        "skipped": 15,
+        "passed": 3063
+      },
+      "raw_log_sha256": "e98a6a17adea5043ec55cad0a297c3065f59d3265120047f1e61cc1ecb19422d",
+      "public_log": {
+        "path": "logs/03-default.log",
+        "bytes": 94085,
+        "sha256": "f92a1b36087b10b90e1700d0a2c79ac369d1243316be18bd84e274c2d9d6b316",
+        "sanitized": true
+      },
+      "test_outcomes": [
+        {
+          "class": "org.apache.bcel.classfile.BootstrapMethodCopyTest",
+          "name": "testCopyCanBeUpdatedIndependently",
+          "outcome": "passed"
+        },
+        {
+          "class": "org.apache.bcel.classfile.BootstrapMethodCopyTest",
+          "name": "testCopyConstructorCanBeUpdatedIndependently",
+          "outcome": "passed"
+        },
+        {
+          "class": "org.apache.bcel.classfile.BootstrapMethodTest",
+          "name": "testDumpChangesOnlyAfterExplicitUpdate",
+          "outcome": "passed"
+        },
+        {
+          "class": "org.apache.bcel.classfile.BootstrapMethodTest",
+          "name": "testSetterCopiesArguments",
+          "outcome": "passed"
+        },
+        {
+          "class": "org.apache.bcel.classfile.BootstrapMethodTest",
+          "name": "testConstructorCopiesArguments",
+          "outcome": "passed"
+        },
+        {
+          "class": "org.apache.bcel.classfile.BootstrapMethodTest",
+          "name": "testSetterNormalizesNull",
+          "outcome": "passed"
+        },
+        {
+          "class": "org.apache.bcel.classfile.BootstrapMethodTest",
+          "name": "testReadAndDumpArguments",
+          "outcome": "passed"
+        },
+        {
+          "class": "org.apache.bcel.classfile.BootstrapMethodTest",
+          "name": "testConstructorNormalizesNull",
+          "outcome": "passed"
+        },
+        {
+          "class": "org.apache.bcel.classfile.BootstrapMethodTest",
+          "name": "testGetterReturnsSnapshot",
+          "outcome": "passed"
+        }
+      ],
+      "skipped_cases": [
+        {
+          "class": "org.apache.bcel.generic.FieldGenTest",
+          "name": "testBCELComparator",
+          "outcome": "skipped",
+          "detail": "void org.apache.bcel.generic.FieldGenTest.testBCELComparator() throws java.lang.Exception is @Disabled"
+        },
+        {
+          "class": "org.apache.bcel.verifier.JiraBcel291Test",
+          "name": "test",
+          "outcome": "skipped",
+          "detail": "class org.apache.bcel.verifier.JiraBcel291Test is @Disabled"
+        },
+        {
+          "class": "org.apache.bcel.verifier.JiraBcel369Test",
+          "name": "testCompiledClass",
+          "outcome": "skipped",
+          "detail": "void org.apache.bcel.verifier.JiraBcel369Test.testCompiledClass() throws java.lang.ClassNotFoundException is @Disabled"
+        },
+        {
+          "class": "org.apache.bcel.verifier.TransitiveHullTest",
+          "name": "testSelf",
+          "outcome": "skipped",
+          "detail": "void org.apache.bcel.verifier.TransitiveHullTest.testSelf() is @Disabled"
+        },
+        {
+          "class": "org.apache.bcel.verifier.TransitiveHullTest",
+          "name": "testA",
+          "outcome": "skipped",
+          "detail": "void org.apache.bcel.verifier.TransitiveHullTest.testA() is @Disabled"
+        },
+        {
+          "class": "org.apache.bcel.verifier.TransitiveHullTest",
+          "name": "testB",
+          "outcome": "skipped",
+          "detail": "void org.apache.bcel.verifier.TransitiveHullTest.testB() is @Disabled"
+        },
+        {
+          "class": "org.apache.bcel.verifier.TransitiveHullTest",
+          "name": "testC",
+          "outcome": "skipped",
+          "detail": "void org.apache.bcel.verifier.TransitiveHullTest.testC() is @Disabled"
+        },
+        {
+          "class": "org.apache.bcel.verifier.TransitiveHullTest",
+          "name": "testClassDoesNotExist",
+          "outcome": "skipped",
+          "detail": "void org.apache.bcel.verifier.TransitiveHullTest.testClassDoesNotExist() is @Disabled"
+        },
+        {
+          "class": "org.apache.bcel.verifier.VerifierTest",
+          "name": "testObjectInputStreamJDK8",
+          "outcome": "skipped",
+          "detail": "Disabled on JRE version: 17.0.20"
+        },
+        {
+          "class": "org.apache.bcel.verifier.VerifyJavaHomesTest",
+          "name": "testJarEntryClassName(String)",
+          "outcome": "skipped",
+          "detail": "Run once in a while, it takes a very long time."
+        },
+        {
+          "class": "org.apache.bcel.verifier.VerifyJavaMathTest",
+          "name": "testBigDecimal",
+          "outcome": "skipped",
+          "detail": "void org.apache.bcel.verifier.VerifyJavaMathTest.testBigDecimal() throws java.lang.ClassNotFoundException is @Disabled"
+        },
+        {
+          "class": "org.apache.bcel.verifier.VerifyJavaMathTest",
+          "name": "testBigInteger",
+          "outcome": "skipped",
+          "detail": "void org.apache.bcel.verifier.VerifyJavaMathTest.testBigInteger() throws java.lang.ClassNotFoundException is @Disabled"
+        },
+        {
+          "class": "org.apache.bcel.verifier.VerifyJavaUtilTest",
+          "name": "testTreeMap",
+          "outcome": "skipped",
+          "detail": "class org.apache.bcel.verifier.VerifyJavaUtilTest is @Disabled"
+        },
+        {
+          "class": "org.apache.bcel.verifier.VerifyJavaUtilTest",
+          "name": "testLinkedHashMap",
+          "outcome": "skipped",
+          "detail": "class org.apache.bcel.verifier.VerifyJavaUtilTest is @Disabled"
+        },
+        {
+          "class": "org.apache.bcel.verifier.VerifyJavaUtilTest",
+          "name": "testHashMap",
+          "outcome": "skipped",
+          "detail": "class org.apache.bcel.verifier.VerifyJavaUtilTest is @Disabled"
+        }
+      ],
+      "error_cases": [
+        {
+          "class": "org.apache.bcel.util.BCELifierTest",
+          "name": "testJavapCompare(String)[1]",
+          "outcome": "error",
+          "detail": "Cannot run program \"javap\": error=2, No such file or directory"
+        },
+        {
+          "class": "org.apache.bcel.util.BCELifierTest",
+          "name": "testJavapCompare(String)[2]",
+          "outcome": "error",
+          "detail": "Cannot run program \"javap\": error=2, No such file or directory"
+        },
+        {
+          "class": "org.apache.bcel.util.BCELifierTest",
+          "name": "testJavapCompare(String)[3]",
+          "outcome": "error",
+          "detail": "Cannot run program \"javap\": error=2, No such file or directory"
+        },
+        {
+          "class": "org.apache.bcel.util.BCELifierTest",
+          "name": "testJavapCompare(String)[4]",
+          "outcome": "error",
+          "detail": "Cannot run program \"javap\": error=2, No such file or directory"
+        },
+        {
+          "class": "org.apache.bcel.util.BCELifierTest",
+          "name": "testJavapCompare(String)[5]",
+          "outcome": "error",
+          "detail": "Cannot run program \"javap\": error=2, No such file or directory"
+        },
+        {
+          "class": "org.apache.bcel.util.BCELifierTest",
+          "name": "testJavapCompare(String)[6]",
+          "outcome": "error",
+          "detail": "Cannot run program \"javap\": error=2, No such file or directory"
+        },
+        {
+          "class": "org.apache.bcel.util.BCELifierTest",
+          "name": "testJavapCompare(String)[7]",
+          "outcome": "error",
+          "detail": "Cannot run program \"javap\": error=2, No such file or directory"
+        },
+        {
+          "class": "org.apache.bcel.util.BCELifierTest",
+          "name": "testJavapCompare(String)[8]",
+          "outcome": "error",
+          "detail": "Cannot run program \"javap\": error=2, No such file or directory"
+        },
+        {
+          "class": "org.apache.bcel.util.BCELifierTest",
+          "name": "testJavapCompareJava25KnownBroken(String)[1]",
+          "outcome": "error",
+          "detail": "Cannot run program \"javap\": error=2, No such file or directory"
+        },
+        {
+          "class": "org.apache.bcel.util.BCELifierTest",
+          "name": "testJavapCompareJava25KnownBroken(String)[2]",
+          "outcome": "error",
+          "detail": "Cannot run program \"javap\": error=2, No such file or directory"
+        },
+        {
+          "class": "org.apache.bcel.util.BCELifierTest",
+          "name": "testStackMap(String)[1]",
+          "outcome": "error",
+          "detail": "Cannot run program \"javap\": error=2, No such file or directory"
+        },
+        {
+          "class": "org.apache.bcel.util.BCELifierTest",
+          "name": "testStackMap(String)[2]",
+          "outcome": "error",
+          "detail": "Cannot run program \"javap\": error=2, No such file or directory"
+        }
+      ]
+    },
+    {
+      "label": "default-javap",
+      "cwd": "<CHECKOUT>",
+      "command": [
+        "<TOOLS>/apache-maven-3.9.11/bin/mvn",
+        "--settings",
+        "<TOOLS>/maven-settings.xml",
+        "--errors",
+        "--show-version",
+        "--batch-mode",
+        "--no-transfer-progress",
+        "-Dmaven.repo.local=<MAVEN_REPOSITORY>",
+        "-DtrimStackTrace=false",
+        "-Dcommons.compiler.javadoc=<TOOLS>/javadoc"
+      ],
+      "started_at": "2026-10-22T11:52:03.600277+00:00",
+      "head": "4ec24e4626250c4411388323a05c95d50673e218",
+      "head_tree": "f2d597d840a5b09af42518f21ceeaad8ebdfbf98",
+      "status": "",
+      "files": {
+        "src/main/java/org/apache/bcel/classfile/BootstrapMethod.java": {
+          "bytes": 6903,
+          "sha256": "a2bd0c45d3b566162d06f51f412ddd086b7cf44963f7ec61379df5d275224a09",
+          "git_blob": "c8a64f8bbfd174dfd44985eb2f287385efc9e49e"
+        },
+        "src/test/java/org/apache/bcel/classfile/BootstrapMethodTest.java": {
+          "bytes": 4714,
+          "sha256": "dcbbb983a2b1e4a5aa1bd0d79a8b3cc982dd552dba0e63e71f5c5663ce60dbea",
+          "git_blob": "84f50d388476d3056923428279344a90d6a3470e"
+        },
+        "src/test/java/org/apache/bcel/classfile/BootstrapMethodCopyTest.java": {
+          "bytes": 2617,
+          "sha256": "4ff460d547bc26c5a2ecc07fc79655a5837e933be56e9a51c72e9fd97a837034",
+          "git_blob": "fcf9033e54db56d597fb54afb7972886ff3e2a45"
+        },
+        "src/changes/changes.xml": {
+          "bytes": 93893,
+          "sha256": "b76b50295955d3d95c5ccd00ef03d8ad4e260d28779a83a4d1a996e4be2c1f39",
+          "git_blob": "6583579a58010c2ae6ae2dbe8639f0d0f7297429"
+        }
+      },
+      "environment_adaptation": {
+        "path_prefix": "<TOOLS>",
+        "javap_launcher": "<TOOLS>/javap",
+        "javap_launcher_sha256": "54966d41396de75431412b2ebe53a2ecd415c98359928bd96e369b06fdb37de4",
+        "javap_implementation": "/usr/bin/java -m jdk.jdeps/com.sun.tools.javap.Main",
+        "reason": "Installed JDK module exists; native javap launcher is absent."
+      },
+      "completed_at": "2026-10-22T11:53:10.781249+00:00",
+      "exit_code": 1,
+      "suites": [
+        {
+          "name": "org.apache.bcel.AnnotationAccessFlagTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.AnnotationDefaultAttributeTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.AnnotationEntryTest",
+          "reported": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 4,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.AnonymousClassTest",
+          "reported": 5,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 5,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.ConstTest",
+          "reported": 8,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 8,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.CounterVisitorTest",
+          "reported": 39,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 39,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.ElementValueGenTest",
+          "reported": 11,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 11,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.EnclosingMethodAttributeTest",
+          "reported": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 3,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.EnumAccessFlagTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.HandleTest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.InstructionFinderTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.LocalVariableTypeTableTest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.OssFuzzTest",
+          "reported": 9,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 9,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.PLSETest",
+          "reported": 7,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 7,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.PerformanceTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.AttributeNestingTest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.AttributeTagTest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.BootstrapMethodCopyTest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.BootstrapMethodTest",
+          "reported": 7,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 7,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.ClassParserTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.CodeTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.ConstantDynamicTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.ConstantPoolModuleAccessTest",
+          "reported": 78,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 78,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.ConstantPoolModuleToStringTest",
+          "reported": 14,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 14,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.ConstantPoolTest",
+          "reported": 5,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 5,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.ConstantTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.DeprecatedTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.DumpU2OverflowTest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.ElementValueNestingTest",
+          "reported": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 3,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.FieldTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.InvalidMethodSigantureTest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.JavaClassCyclicTest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.JavaClassTest",
+          "reported": 2454,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2454,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.Jira368Test",
+          "reported": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 3,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.LocalVariableTableTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.LocalVariableTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.PMGClassTest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.PermittedSubclassesTest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.RecordTest",
+          "reported": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 6,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.SignatureTest",
+          "reported": 5,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 5,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.StackMapTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.SyntheticTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.UnknownTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.UtilityEncodeDecodeTest",
+          "reported": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 3,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.UtilityTest",
+          "reported": 14,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 14,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.AnnotationGenTest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.ArrayTypeTest",
+          "reported": 9,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 9,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.BREAKPOINTTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.BasicTypeTest",
+          "reported": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 3,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.BranchHandleTest",
+          "reported": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 4,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.ClassGenTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.ConstantPoolGenKeyCollisionTest",
+          "reported": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 4,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.D2FTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.D2ITest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.D2LTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.DADDTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.DDIVTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.DMULTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.DNEGTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.DREMTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.DSUBTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.EmptyVisitorTest",
+          "reported": 18,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 18,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.F2DTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.F2ITest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.F2LTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.FADDTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.FDIVTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.FMULTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.FNEGTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.FREMTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.FSUBTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.FieldAnnotationsTest",
+          "reported": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 3,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.FieldGenTest",
+          "reported": 7,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 1,
+          "passed": 6,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.GETFIELDTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.GeneratingAnnotatedClassesTest",
+          "reported": 9,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 9,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.I2BTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.I2CTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.I2DTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.I2FTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.I2LTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.I2STest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.IADDTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.IANDTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.IDIVTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.IINCTest",
+          "reported": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 4,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.IMPDEP1Test",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.IMPDEP2Test",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.IMULTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.INEGTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.INVOKEDYNAMICTest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.INVOKEINTERFACETest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.IORTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.IREMTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.ISHLTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.ISHRTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.ISUBTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.IXORTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.InstructionFactoryTest",
+          "reported": 5,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 5,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.InstructionHandleTest",
+          "reported": 5,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 5,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.JdkGenericDumpTest",
+          "reported": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 3,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.JiraBcel362Test",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.L2DTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.L2FTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.L2ITest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.LADDTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.LANDTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.LCMPTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.LDIVTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.LMULTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.LNEGTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.LOOKUPSWITCHTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.LORTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.LREMTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.LSHLTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.LSHRTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.LSUBTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.LXORTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.LocalVariableInstructionTest",
+          "reported": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 3,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.MULTIANEWARRAYTest",
+          "reported": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 3,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.MethodGenTest",
+          "reported": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 6,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.ObjectTypeTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.PUTFIELDTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.PUTSTATICTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.ParameterAnnotationVisibilityTest",
+          "reported": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 3,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.SWITCHTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.SetIndexBoundsTest",
+          "reported": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 3,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.SwitchAllocationTest",
+          "reported": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 6,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.TypeTest",
+          "reported": 28,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 28,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.util.BCELifierTest",
+          "reported": 58,
+          "failures": 0,
+          "errors": 12,
+          "skipped": 0,
+          "passed": 46,
+          "failed_cases": [
+            "testJavapCompare(String)[1]",
+            "testJavapCompare(String)[2]",
+            "testJavapCompare(String)[3]",
+            "testJavapCompare(String)[4]",
+            "testJavapCompare(String)[5]",
+            "testJavapCompare(String)[6]",
+            "testJavapCompare(String)[7]",
+            "testJavapCompare(String)[8]",
+            "testJavapCompareJava25KnownBroken(String)[1]",
+            "testJavapCompareJava25KnownBroken(String)[2]",
+            "testStackMap(String)[1]",
+            "testStackMap(String)[2]"
+          ]
+        },
+        {
+          "name": "org.apache.bcel.util.Class2HTMLTest",
+          "reported": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 3,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.util.Class2HTMLTraversalTest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.util.Class2HTMLXSSTest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.util.ClassPathRepositoryTest",
+          "reported": 8,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 8,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.util.ClassPathTest",
+          "reported": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 6,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.util.CodeHTMLNarrowingTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.util.InstructionFinderTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.util.LruCacheClassPathRepositoryTest",
+          "reported": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 3,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.util.ModularRuntimeImageTest",
+          "reported": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 4,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.util.RepositoryNameMismatchTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.JiraBcel291Test",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 1,
+          "passed": 0,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.JiraBcel369Test",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 1,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.JiraBcel370Test",
+          "reported": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 3,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.TransitiveHullTest",
+          "reported": 5,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 5,
+          "passed": 0,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.VerifierArrayAccessTest",
+          "reported": 16,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 16,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.VerifierFactoryTest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.VerifierInvokeTest",
+          "reported": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 4,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.VerifierMainTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.VerifierReturnTest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.VerifierTest",
+          "reported": 10,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 1,
+          "passed": 9,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.VerifierThrowTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.VerifyBadClassesTest",
+          "reported": 9,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 9,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.VerifyJavaHomesTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 1,
+          "passed": 0,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.VerifyJavaMathTest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 2,
+          "passed": 0,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.VerifyJavaUtilTest",
+          "reported": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 3,
+          "passed": 0,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.statics.LocalVariableInfoTest",
+          "reported": 5,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 5,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.statics.Pass2VerifierTest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.statics.Pass3aVerifierTest",
+          "reported": 12,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 12,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.structurals.InstConstraintVisitorTest",
+          "reported": 12,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 12,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.structurals.UninitializedObjectTypeTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        }
+      ],
+      "totals": {
+        "reported": 3090,
+        "failures": 0,
+        "errors": 12,
+        "skipped": 15,
+        "passed": 3063
+      },
+      "raw_log_sha256": "c6a7b3eb243d0912a661321df6d0dd6597e19937f8b8d99a713d17a1e9789f7a",
+      "public_log": {
+        "path": "logs/04-default-javap.log",
+        "bytes": 95078,
+        "sha256": "11422db44dda6594bd429d5d45d06a8035da95504b3a1d934e363b9d1f1853c5",
+        "sanitized": true
+      },
+      "test_outcomes": [
+        {
+          "class": "org.apache.bcel.classfile.BootstrapMethodCopyTest",
+          "name": "testCopyCanBeUpdatedIndependently",
+          "outcome": "passed"
+        },
+        {
+          "class": "org.apache.bcel.classfile.BootstrapMethodCopyTest",
+          "name": "testCopyConstructorCanBeUpdatedIndependently",
+          "outcome": "passed"
+        },
+        {
+          "class": "org.apache.bcel.classfile.BootstrapMethodTest",
+          "name": "testDumpChangesOnlyAfterExplicitUpdate",
+          "outcome": "passed"
+        },
+        {
+          "class": "org.apache.bcel.classfile.BootstrapMethodTest",
+          "name": "testSetterCopiesArguments",
+          "outcome": "passed"
+        },
+        {
+          "class": "org.apache.bcel.classfile.BootstrapMethodTest",
+          "name": "testConstructorCopiesArguments",
+          "outcome": "passed"
+        },
+        {
+          "class": "org.apache.bcel.classfile.BootstrapMethodTest",
+          "name": "testSetterNormalizesNull",
+          "outcome": "passed"
+        },
+        {
+          "class": "org.apache.bcel.classfile.BootstrapMethodTest",
+          "name": "testReadAndDumpArguments",
+          "outcome": "passed"
+        },
+        {
+          "class": "org.apache.bcel.classfile.BootstrapMethodTest",
+          "name": "testConstructorNormalizesNull",
+          "outcome": "passed"
+        },
+        {
+          "class": "org.apache.bcel.classfile.BootstrapMethodTest",
+          "name": "testGetterReturnsSnapshot",
+          "outcome": "passed"
+        }
+      ],
+      "skipped_cases": [
+        {
+          "class": "org.apache.bcel.generic.FieldGenTest",
+          "name": "testBCELComparator",
+          "outcome": "skipped",
+          "detail": "void org.apache.bcel.generic.FieldGenTest.testBCELComparator() throws java.lang.Exception is @Disabled"
+        },
+        {
+          "class": "org.apache.bcel.verifier.JiraBcel291Test",
+          "name": "test",
+          "outcome": "skipped",
+          "detail": "class org.apache.bcel.verifier.JiraBcel291Test is @Disabled"
+        },
+        {
+          "class": "org.apache.bcel.verifier.JiraBcel369Test",
+          "name": "testCompiledClass",
+          "outcome": "skipped",
+          "detail": "void org.apache.bcel.verifier.JiraBcel369Test.testCompiledClass() throws java.lang.ClassNotFoundException is @Disabled"
+        },
+        {
+          "class": "org.apache.bcel.verifier.TransitiveHullTest",
+          "name": "testSelf",
+          "outcome": "skipped",
+          "detail": "void org.apache.bcel.verifier.TransitiveHullTest.testSelf() is @Disabled"
+        },
+        {
+          "class": "org.apache.bcel.verifier.TransitiveHullTest",
+          "name": "testA",
+          "outcome": "skipped",
+          "detail": "void org.apache.bcel.verifier.TransitiveHullTest.testA() is @Disabled"
+        },
+        {
+          "class": "org.apache.bcel.verifier.TransitiveHullTest",
+          "name": "testB",
+          "outcome": "skipped",
+          "detail": "void org.apache.bcel.verifier.TransitiveHullTest.testB() is @Disabled"
+        },
+        {
+          "class": "org.apache.bcel.verifier.TransitiveHullTest",
+          "name": "testC",
+          "outcome": "skipped",
+          "detail": "void org.apache.bcel.verifier.TransitiveHullTest.testC() is @Disabled"
+        },
+        {
+          "class": "org.apache.bcel.verifier.TransitiveHullTest",
+          "name": "testClassDoesNotExist",
+          "outcome": "skipped",
+          "detail": "void org.apache.bcel.verifier.TransitiveHullTest.testClassDoesNotExist() is @Disabled"
+        },
+        {
+          "class": "org.apache.bcel.verifier.VerifierTest",
+          "name": "testObjectInputStreamJDK8",
+          "outcome": "skipped",
+          "detail": "Disabled on JRE version: 17.0.20"
+        },
+        {
+          "class": "org.apache.bcel.verifier.VerifyJavaHomesTest",
+          "name": "testJarEntryClassName(String)",
+          "outcome": "skipped",
+          "detail": "Run once in a while, it takes a very long time."
+        },
+        {
+          "class": "org.apache.bcel.verifier.VerifyJavaMathTest",
+          "name": "testBigDecimal",
+          "outcome": "skipped",
+          "detail": "void org.apache.bcel.verifier.VerifyJavaMathTest.testBigDecimal() throws java.lang.ClassNotFoundException is @Disabled"
+        },
+        {
+          "class": "org.apache.bcel.verifier.VerifyJavaMathTest",
+          "name": "testBigInteger",
+          "outcome": "skipped",
+          "detail": "void org.apache.bcel.verifier.VerifyJavaMathTest.testBigInteger() throws java.lang.ClassNotFoundException is @Disabled"
+        },
+        {
+          "class": "org.apache.bcel.verifier.VerifyJavaUtilTest",
+          "name": "testTreeMap",
+          "outcome": "skipped",
+          "detail": "class org.apache.bcel.verifier.VerifyJavaUtilTest is @Disabled"
+        },
+        {
+          "class": "org.apache.bcel.verifier.VerifyJavaUtilTest",
+          "name": "testLinkedHashMap",
+          "outcome": "skipped",
+          "detail": "class org.apache.bcel.verifier.VerifyJavaUtilTest is @Disabled"
+        },
+        {
+          "class": "org.apache.bcel.verifier.VerifyJavaUtilTest",
+          "name": "testHashMap",
+          "outcome": "skipped",
+          "detail": "class org.apache.bcel.verifier.VerifyJavaUtilTest is @Disabled"
+        }
+      ],
+      "error_cases": [
+        {
+          "class": "org.apache.bcel.util.BCELifierTest",
+          "name": "testJavapCompare(String)[1]",
+          "outcome": "error",
+          "detail": "Cannot run program \"javac\" (in directory \"target/BCELifierTest\"): error=2, No such file or directory"
+        },
+        {
+          "class": "org.apache.bcel.util.BCELifierTest",
+          "name": "testJavapCompare(String)[2]",
+          "outcome": "error",
+          "detail": "Cannot run program \"javac\" (in directory \"target/BCELifierTest\"): error=2, No such file or directory"
+        },
+        {
+          "class": "org.apache.bcel.util.BCELifierTest",
+          "name": "testJavapCompare(String)[3]",
+          "outcome": "error",
+          "detail": "Cannot run program \"javac\" (in directory \"target/BCELifierTest\"): error=2, No such file or directory"
+        },
+        {
+          "class": "org.apache.bcel.util.BCELifierTest",
+          "name": "testJavapCompare(String)[4]",
+          "outcome": "error",
+          "detail": "Cannot run program \"javac\" (in directory \"target/BCELifierTest\"): error=2, No such file or directory"
+        },
+        {
+          "class": "org.apache.bcel.util.BCELifierTest",
+          "name": "testJavapCompare(String)[5]",
+          "outcome": "error",
+          "detail": "Cannot run program \"javac\" (in directory \"target/BCELifierTest\"): error=2, No such file or directory"
+        },
+        {
+          "class": "org.apache.bcel.util.BCELifierTest",
+          "name": "testJavapCompare(String)[6]",
+          "outcome": "error",
+          "detail": "Cannot run program \"javac\" (in directory \"target/BCELifierTest\"): error=2, No such file or directory"
+        },
+        {
+          "class": "org.apache.bcel.util.BCELifierTest",
+          "name": "testJavapCompare(String)[7]",
+          "outcome": "error",
+          "detail": "Cannot run program \"javac\" (in directory \"target/BCELifierTest\"): error=2, No such file or directory"
+        },
+        {
+          "class": "org.apache.bcel.util.BCELifierTest",
+          "name": "testJavapCompare(String)[8]",
+          "outcome": "error",
+          "detail": "Cannot run program \"javac\" (in directory \"target/BCELifierTest\"): error=2, No such file or directory"
+        },
+        {
+          "class": "org.apache.bcel.util.BCELifierTest",
+          "name": "testJavapCompareJava25KnownBroken(String)[1]",
+          "outcome": "error",
+          "detail": "Cannot run program \"javac\" (in directory \"target/BCELifierTest\"): error=2, No such file or directory"
+        },
+        {
+          "class": "org.apache.bcel.util.BCELifierTest",
+          "name": "testJavapCompareJava25KnownBroken(String)[2]",
+          "outcome": "error",
+          "detail": "Cannot run program \"javac\" (in directory \"target/BCELifierTest\"): error=2, No such file or directory"
+        },
+        {
+          "class": "org.apache.bcel.util.BCELifierTest",
+          "name": "testStackMap(String)[1]",
+          "outcome": "error",
+          "detail": "Cannot run program \"javac\" (in directory \"target/BCELifierTest\"): error=2, No such file or directory"
+        },
+        {
+          "class": "org.apache.bcel.util.BCELifierTest",
+          "name": "testStackMap(String)[2]",
+          "outcome": "error",
+          "detail": "Cannot run program \"javac\" (in directory \"target/BCELifierTest\"): error=2, No such file or directory"
+        }
+      ]
+    },
+    {
+      "label": "default-jdk-tools",
+      "cwd": "<CHECKOUT>",
+      "command": [
+        "<TOOLS>/apache-maven-3.9.11/bin/mvn",
+        "--settings",
+        "<TOOLS>/maven-settings.xml",
+        "--errors",
+        "--show-version",
+        "--batch-mode",
+        "--no-transfer-progress",
+        "-Dmaven.repo.local=<MAVEN_REPOSITORY>",
+        "-DtrimStackTrace=false",
+        "-Dcommons.compiler.javadoc=<TOOLS>/javadoc"
+      ],
+      "started_at": "2026-10-22T11:54:22.586204+00:00",
+      "head": "4ec24e4626250c4411388323a05c95d50673e218",
+      "head_tree": "f2d597d840a5b09af42518f21ceeaad8ebdfbf98",
+      "status": "",
+      "files": {
+        "src/main/java/org/apache/bcel/classfile/BootstrapMethod.java": {
+          "bytes": 6903,
+          "sha256": "a2bd0c45d3b566162d06f51f412ddd086b7cf44963f7ec61379df5d275224a09",
+          "git_blob": "c8a64f8bbfd174dfd44985eb2f287385efc9e49e"
+        },
+        "src/test/java/org/apache/bcel/classfile/BootstrapMethodTest.java": {
+          "bytes": 4714,
+          "sha256": "dcbbb983a2b1e4a5aa1bd0d79a8b3cc982dd552dba0e63e71f5c5663ce60dbea",
+          "git_blob": "84f50d388476d3056923428279344a90d6a3470e"
+        },
+        "src/test/java/org/apache/bcel/classfile/BootstrapMethodCopyTest.java": {
+          "bytes": 2617,
+          "sha256": "4ff460d547bc26c5a2ecc07fc79655a5837e933be56e9a51c72e9fd97a837034",
+          "git_blob": "fcf9033e54db56d597fb54afb7972886ff3e2a45"
+        },
+        "src/changes/changes.xml": {
+          "bytes": 93893,
+          "sha256": "b76b50295955d3d95c5ccd00ef03d8ad4e260d28779a83a4d1a996e4be2c1f39",
+          "git_blob": "6583579a58010c2ae6ae2dbe8639f0d0f7297429"
+        }
+      },
+      "environment_adaptation": {
+        "path_prefix": "<TOOLS>",
+        "javap_launcher": "<TOOLS>/javap",
+        "javap_launcher_sha256": "54966d41396de75431412b2ebe53a2ecd415c98359928bd96e369b06fdb37de4",
+        "javap_implementation": "/usr/bin/java -m jdk.jdeps/com.sun.tools.javap.Main",
+        "reason": "Installed JDK modules exist; native javap and javac launchers are absent.",
+        "javac_launcher": "<TOOLS>/javac",
+        "javac_launcher_sha256": "529e7be3908d9e16a2baf2631c58c7f9c7585f8f98041a0ef76851f771e85c90",
+        "javac_implementation": "/usr/bin/java -m jdk.compiler/com.sun.tools.javac.Main"
+      },
+      "completed_at": "2026-10-22T11:56:51.296879+00:00",
+      "exit_code": 0,
+      "suites": [
+        {
+          "name": "org.apache.bcel.AnnotationAccessFlagTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.AnnotationDefaultAttributeTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.AnnotationEntryTest",
+          "reported": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 4,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.AnonymousClassTest",
+          "reported": 5,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 5,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.ConstTest",
+          "reported": 8,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 8,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.CounterVisitorTest",
+          "reported": 39,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 39,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.ElementValueGenTest",
+          "reported": 11,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 11,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.EnclosingMethodAttributeTest",
+          "reported": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 3,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.EnumAccessFlagTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.HandleTest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.InstructionFinderTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.LocalVariableTypeTableTest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.OssFuzzTest",
+          "reported": 9,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 9,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.PLSETest",
+          "reported": 7,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 7,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.PerformanceTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.AttributeNestingTest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.AttributeTagTest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.BootstrapMethodCopyTest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.BootstrapMethodTest",
+          "reported": 7,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 7,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.ClassParserTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.CodeTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.ConstantDynamicTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.ConstantPoolModuleAccessTest",
+          "reported": 78,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 78,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.ConstantPoolModuleToStringTest",
+          "reported": 14,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 14,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.ConstantPoolTest",
+          "reported": 5,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 5,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.ConstantTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.DeprecatedTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.DumpU2OverflowTest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.ElementValueNestingTest",
+          "reported": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 3,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.FieldTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.InvalidMethodSigantureTest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.JavaClassCyclicTest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.JavaClassTest",
+          "reported": 2454,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2454,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.Jira368Test",
+          "reported": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 3,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.LocalVariableTableTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.LocalVariableTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.PMGClassTest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.PermittedSubclassesTest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.RecordTest",
+          "reported": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 6,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.SignatureTest",
+          "reported": 5,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 5,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.StackMapTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.SyntheticTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.UnknownTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.UtilityEncodeDecodeTest",
+          "reported": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 3,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.classfile.UtilityTest",
+          "reported": 14,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 14,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.AnnotationGenTest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.ArrayTypeTest",
+          "reported": 9,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 9,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.BREAKPOINTTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.BasicTypeTest",
+          "reported": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 3,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.BranchHandleTest",
+          "reported": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 4,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.ClassGenTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.ConstantPoolGenKeyCollisionTest",
+          "reported": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 4,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.D2FTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.D2ITest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.D2LTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.DADDTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.DDIVTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.DMULTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.DNEGTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.DREMTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.DSUBTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.EmptyVisitorTest",
+          "reported": 18,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 18,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.F2DTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.F2ITest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.F2LTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.FADDTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.FDIVTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.FMULTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.FNEGTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.FREMTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.FSUBTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.FieldAnnotationsTest",
+          "reported": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 3,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.FieldGenTest",
+          "reported": 7,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 1,
+          "passed": 6,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.GETFIELDTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.GeneratingAnnotatedClassesTest",
+          "reported": 9,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 9,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.I2BTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.I2CTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.I2DTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.I2FTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.I2LTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.I2STest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.IADDTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.IANDTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.IDIVTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.IINCTest",
+          "reported": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 4,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.IMPDEP1Test",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.IMPDEP2Test",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.IMULTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.INEGTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.INVOKEDYNAMICTest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.INVOKEINTERFACETest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.IORTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.IREMTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.ISHLTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.ISHRTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.ISUBTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.IXORTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.InstructionFactoryTest",
+          "reported": 5,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 5,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.InstructionHandleTest",
+          "reported": 5,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 5,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.JdkGenericDumpTest",
+          "reported": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 3,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.JiraBcel362Test",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.L2DTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.L2FTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.L2ITest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.LADDTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.LANDTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.LCMPTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.LDIVTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.LMULTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.LNEGTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.LOOKUPSWITCHTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.LORTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.LREMTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.LSHLTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.LSHRTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.LSUBTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.LXORTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.LocalVariableInstructionTest",
+          "reported": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 3,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.MULTIANEWARRAYTest",
+          "reported": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 3,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.MethodGenTest",
+          "reported": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 6,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.ObjectTypeTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.PUTFIELDTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.PUTSTATICTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.ParameterAnnotationVisibilityTest",
+          "reported": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 3,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.SWITCHTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.SetIndexBoundsTest",
+          "reported": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 3,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.SwitchAllocationTest",
+          "reported": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 6,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.generic.TypeTest",
+          "reported": 28,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 28,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.util.BCELifierTest",
+          "reported": 58,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 58,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.util.Class2HTMLTest",
+          "reported": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 3,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.util.Class2HTMLTraversalTest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.util.Class2HTMLXSSTest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.util.ClassPathRepositoryTest",
+          "reported": 8,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 8,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.util.ClassPathTest",
+          "reported": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 6,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.util.CodeHTMLNarrowingTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.util.InstructionFinderTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.util.LruCacheClassPathRepositoryTest",
+          "reported": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 3,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.util.ModularRuntimeImageTest",
+          "reported": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 4,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.util.RepositoryNameMismatchTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.JiraBcel291Test",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 1,
+          "passed": 0,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.JiraBcel369Test",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 1,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.JiraBcel370Test",
+          "reported": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 3,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.TransitiveHullTest",
+          "reported": 5,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 5,
+          "passed": 0,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.VerifierArrayAccessTest",
+          "reported": 16,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 16,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.VerifierFactoryTest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.VerifierInvokeTest",
+          "reported": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 4,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.VerifierMainTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.VerifierReturnTest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.VerifierTest",
+          "reported": 10,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 1,
+          "passed": 9,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.VerifierThrowTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.VerifyBadClassesTest",
+          "reported": 9,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 9,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.VerifyJavaHomesTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 1,
+          "passed": 0,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.VerifyJavaMathTest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 2,
+          "passed": 0,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.VerifyJavaUtilTest",
+          "reported": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 3,
+          "passed": 0,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.statics.LocalVariableInfoTest",
+          "reported": 5,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 5,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.statics.Pass2VerifierTest",
+          "reported": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 2,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.statics.Pass3aVerifierTest",
+          "reported": 12,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 12,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.structurals.InstConstraintVisitorTest",
+          "reported": 12,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 12,
+          "failed_cases": []
+        },
+        {
+          "name": "org.apache.bcel.verifier.structurals.UninitializedObjectTypeTest",
+          "reported": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1,
+          "failed_cases": []
+        }
+      ],
+      "totals": {
+        "reported": 3090,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 15,
+        "passed": 3075
+      },
+      "raw_log_sha256": "e24068565f1d5539d9fafed5034cd5aefa7be4b50a75d1360fa0ccdf3a34c195",
+      "public_log": {
+        "path": "logs/05-default-jdk-tools.log",
+        "bytes": 63350,
+        "sha256": "37b2c49525a9b50402629d29a00f77b4f130d4659197d8e37f888fd3fe2f0696",
+        "sanitized": true
+      },
+      "test_outcomes": [
+        {
+          "class": "org.apache.bcel.classfile.BootstrapMethodCopyTest",
+          "name": "testCopyCanBeUpdatedIndependently",
+          "outcome": "passed"
+        },
+        {
+          "class": "org.apache.bcel.classfile.BootstrapMethodCopyTest",
+          "name": "testCopyConstructorCanBeUpdatedIndependently",
+          "outcome": "passed"
+        },
+        {
+          "class": "org.apache.bcel.classfile.BootstrapMethodTest",
+          "name": "testDumpChangesOnlyAfterExplicitUpdate",
+          "outcome": "passed"
+        },
+        {
+          "class": "org.apache.bcel.classfile.BootstrapMethodTest",
+          "name": "testSetterCopiesArguments",
+          "outcome": "passed"
+        },
+        {
+          "class": "org.apache.bcel.classfile.BootstrapMethodTest",
+          "name": "testConstructorCopiesArguments",
+          "outcome": "passed"
+        },
+        {
+          "class": "org.apache.bcel.classfile.BootstrapMethodTest",
+          "name": "testSetterNormalizesNull",
+          "outcome": "passed"
+        },
+        {
+          "class": "org.apache.bcel.classfile.BootstrapMethodTest",
+          "name": "testReadAndDumpArguments",
+          "outcome": "passed"
+        },
+        {
+          "class": "org.apache.bcel.classfile.BootstrapMethodTest",
+          "name": "testConstructorNormalizesNull",
+          "outcome": "passed"
+        },
+        {
+          "class": "org.apache.bcel.classfile.BootstrapMethodTest",
+          "name": "testGetterReturnsSnapshot",
+          "outcome": "passed"
+        }
+      ],
+      "skipped_cases": [
+        {
+          "class": "org.apache.bcel.generic.FieldGenTest",
+          "name": "testBCELComparator",
+          "outcome": "skipped",
+          "detail": "void org.apache.bcel.generic.FieldGenTest.testBCELComparator() throws java.lang.Exception is @Disabled"
+        },
+        {
+          "class": "org.apache.bcel.verifier.JiraBcel291Test",
+          "name": "test",
+          "outcome": "skipped",
+          "detail": "class org.apache.bcel.verifier.JiraBcel291Test is @Disabled"
+        },
+        {
+          "class": "org.apache.bcel.verifier.JiraBcel369Test",
+          "name": "testCompiledClass",
+          "outcome": "skipped",
+          "detail": "void org.apache.bcel.verifier.JiraBcel369Test.testCompiledClass() throws java.lang.ClassNotFoundException is @Disabled"
+        },
+        {
+          "class": "org.apache.bcel.verifier.TransitiveHullTest",
+          "name": "testSelf",
+          "outcome": "skipped",
+          "detail": "void org.apache.bcel.verifier.TransitiveHullTest.testSelf() is @Disabled"
+        },
+        {
+          "class": "org.apache.bcel.verifier.TransitiveHullTest",
+          "name": "testA",
+          "outcome": "skipped",
+          "detail": "void org.apache.bcel.verifier.TransitiveHullTest.testA() is @Disabled"
+        },
+        {
+          "class": "org.apache.bcel.verifier.TransitiveHullTest",
+          "name": "testB",
+          "outcome": "skipped",
+          "detail": "void org.apache.bcel.verifier.TransitiveHullTest.testB() is @Disabled"
+        },
+        {
+          "class": "org.apache.bcel.verifier.TransitiveHullTest",
+          "name": "testC",
+          "outcome": "skipped",
+          "detail": "void org.apache.bcel.verifier.TransitiveHullTest.testC() is @Disabled"
+        },
+        {
+          "class": "org.apache.bcel.verifier.TransitiveHullTest",
+          "name": "testClassDoesNotExist",
+          "outcome": "skipped",
+          "detail": "void org.apache.bcel.verifier.TransitiveHullTest.testClassDoesNotExist() is @Disabled"
+        },
+        {
+          "class": "org.apache.bcel.verifier.VerifierTest",
+          "name": "testObjectInputStreamJDK8",
+          "outcome": "skipped",
+          "detail": "Disabled on JRE version: 17.0.20"
+        },
+        {
+          "class": "org.apache.bcel.verifier.VerifyJavaHomesTest",
+          "name": "testJarEntryClassName(String)",
+          "outcome": "skipped",
+          "detail": "Run once in a while, it takes a very long time."
+        },
+        {
+          "class": "org.apache.bcel.verifier.VerifyJavaMathTest",
+          "name": "testBigDecimal",
+          "outcome": "skipped",
+          "detail": "void org.apache.bcel.verifier.VerifyJavaMathTest.testBigDecimal() throws java.lang.ClassNotFoundException is @Disabled"
+        },
+        {
+          "class": "org.apache.bcel.verifier.VerifyJavaMathTest",
+          "name": "testBigInteger",
+          "outcome": "skipped",
+          "detail": "void org.apache.bcel.verifier.VerifyJavaMathTest.testBigInteger() throws java.lang.ClassNotFoundException is @Disabled"
+        },
+        {
+          "class": "org.apache.bcel.verifier.VerifyJavaUtilTest",
+          "name": "testTreeMap",
+          "outcome": "skipped",
+          "detail": "class org.apache.bcel.verifier.VerifyJavaUtilTest is @Disabled"
+        },
+        {
+          "class": "org.apache.bcel.verifier.VerifyJavaUtilTest",
+          "name": "testLinkedHashMap",
+          "outcome": "skipped",
+          "detail": "class org.apache.bcel.verifier.VerifyJavaUtilTest is @Disabled"
+        },
+        {
+          "class": "org.apache.bcel.verifier.VerifyJavaUtilTest",
+          "name": "testHashMap",
+          "outcome": "skipped",
+          "detail": "class org.apache.bcel.verifier.VerifyJavaUtilTest is @Disabled"
+        }
+      ],
+      "error_cases": []
+    }
+  ],
+  "final_gates": {
+    "jacoco": "All configured coverage checks met; 411 classes analyzed. No coverage percentage claimed.",
+    "rat": "699 approved; 0 unapproved; 0 unknown.",
+    "japicmp": "Compared 6.14.0-SNAPSHOT with 6.13.0; no incompatibilities reported.",
+    "checkstyle": "0 violations.",
+    "pmd": "0 violations, processing errors and configuration errors.",
+    "spotbugs": "Analysis and check executed; 0 bugs, errors and missing classes. Report rendering was skipped.",
+    "javadoc": "Goal completed and generated index exists.",
+    "default_build": "BUILD SUCCESS; no test selector or skip flags."
+  },
+  "non_fatal_warnings": [
+    "CycloneDX schema keyword warnings.",
+    "SPDX online license-list I/O error; cached license list used.",
+    "Existing PMD rule deprecation and Java platform auxiliary-classpath warnings."
+  ],
+  "retained_gate_report_hashes": [
+    {
+      "path": "target/pmd.xml",
+      "bytes": 314,
+      "sha256": "1c41bd8be197725391441a815701b24418d4bb9629bcaba1b8f67954b7373263"
+    },
+    {
+      "path": "target/spotbugsXml.xml",
+      "bytes": 117818,
+      "sha256": "2235a089910baae33ac47a3f18fcc6df527aa4601b926be5c0603d0ce5a0ec56"
+    },
+    {
+      "path": "target/checkstyle-result.xml",
+      "bytes": 78656,
+      "sha256": "12ff6d6b064ac6b73cde8eaa12dac5a741aed809e1c69d3c697db423cfa99096"
+    },
+    {
+      "path": "target/japicmp/default-cli.xml",
+      "bytes": 4519,
+      "sha256": "55c1fa2677bbbf5bb1a0e5d5c0c3dd75fa1f332ff3a3be895129b42ca9cdb201"
+    },
+    {
+      "path": "target/japicmp/default-cli.diff",
+      "bytes": 348,
+      "sha256": "93ee5b04ec4b547c6fcdac8e41570aaf9d1c2d44915caf81eaf88a9012255880"
+    },
+    {
+      "path": "target/jacoco.exec",
+      "bytes": 151910,
+      "sha256": "45abc8fc1e36a5380c906e96edee69f45e1f7e4f524c6ef1d1b00de964502db9"
+    },
+    {
+      "path": "target/reports/apidocs/index.html",
+      "bytes": 6442,
+      "sha256": "22f718525ce7363c8207ef649fd2c677c6bd88a2495af11a3be3ac50353db932"
+    }
+  ],
+  "limits": [
+    "Local Linux/JDK17 execution only; Java8 is the compilation target.",
+    "No hosted CI or other OS/JDK execution claimed.",
+    "Fifteen project skips remain reported separately from passes.",
+    "Copy tests establish observable independent updates, not private-array identity.",
+    "No upstream acceptance or independent human review claimed."
+  ]
+}

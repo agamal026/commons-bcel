@@ -1,0 +1,2 @@
+#!/bin/sh
+exec /usr/bin/java -m jdk.jdeps/com.sun.tools.javap.Main "$@"

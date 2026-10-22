@@ -1,0 +1,838 @@
+Apache Maven 3.9.11 (3e54c93a704957b63ee3494413a2b544fd3d825b)
+Maven home: <TOOLS>/apache-maven-3.9.11
+Java version: 17.0.20, vendor: Ubuntu, runtime: /usr/lib/jvm/java-17-openjdk-amd64
+Default locale: en, platform encoding: UTF-8
+OS name: "linux", version: "6.18.55", arch: "amd64", family: "unix"
+[INFO] Error stacktraces are turned on.
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------< org.apache.bcel:bcel >------------------------
+[INFO] Building Apache Commons BCEL 6.14.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.5.0:clean (default-clean) @ bcel ---
+[INFO] Deleting <CHECKOUT>/target
+[INFO] 
+[INFO] --- enforcer:3.6.3:enforce (enforce-maven-version) @ bcel ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.version.RequireMavenVersion passed
+[INFO] 
+[INFO] --- enforcer:3.6.3:enforce (enforce-java-version) @ bcel ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.version.RequireJavaVersion passed
+[INFO] 
+[INFO] --- apache-rat:0.18:check (rat-check) @ bcel ---
+[INFO] No issues found.
+[INFO] 
+[INFO] --- artifact:3.7.0:check-buildplan (check-buildplan) @ bcel ---
+[INFO] No known issue in 20 plugins
+[INFO] 
+[INFO] --- build-helper:3.6.2:parse-version (parse-version) @ bcel ---
+[INFO] 
+[INFO] --- antrun:3.2.0:run (javadoc.resources) @ bcel ---
+[INFO] Executing tasks
+[INFO]      [copy] Copying 2 files to <CHECKOUT>/target/apidocs/META-INF
+[INFO] Executed tasks
+[INFO] 
+[INFO] --- remote-resources:3.3.0:process (process-resource-bundles) @ bcel ---
+[INFO] Skipping remote resources execution.
+[INFO] 
+[INFO] --- resources:3.5.0:resources (default-resources) @ bcel ---
+[INFO] skip non existing resourceDirectory <CHECKOUT>/src/main/resources
+[INFO] Copying 2 resources from . to target/classes/META-INF
+[INFO] 
+[INFO] --- compiler:3.16.0:compile (default-compile) @ bcel ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 404 source files with javac [debug parameters release 8] to target/classes
+[INFO] <CHECKOUT>/src/main/java/org/apache/bcel/classfile/CodeException.java: Some input files use or override a deprecated API.
+[INFO] <CHECKOUT>/src/main/java/org/apache/bcel/classfile/CodeException.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- bundle:6.2.0:manifest (bundle-manifest) @ bcel ---
+[INFO] No MANIFEST.MF file found, generating manifest.
+[INFO] Writing manifest: <CHECKOUT>/target/osgi/MANIFEST.MF
+[INFO] 
+[INFO] --- resources:3.5.0:testResources (default-testResources) @ bcel ---
+[INFO] Copying 48 resources from src/test/resources to target/test-classes
+[INFO] Copying 2 resources from . to target/test-classes/META-INF
+[INFO] 
+[INFO] --- compiler:3.16.0:testCompile (default-testCompile) @ bcel ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 243 source files with javac [debug parameters release 8] to target/test-classes
+[INFO] <CHECKOUT>/src/test/java/org/apache/bcel/Java8PublicClasses.java: Some input files use or override a deprecated API.
+[INFO] <CHECKOUT>/src/test/java/org/apache/bcel/Java8PublicClasses.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- jacoco:0.8.15:prepare-agent (prepare-agent) @ bcel ---
+[INFO] argLine set to -javaagent:<MAVEN_REPOSITORY>/org/jacoco/org.jacoco.agent/0.8.15/org.jacoco.agent-0.8.15-runtime.jar=destfile=<CHECKOUT>/target/jacoco.exec,exclclassloader=jdk.internal.loader.ClassLoaders$PlatformClassLoader
+[INFO] 
+[INFO] --- surefire:3.6.0:test (default-test) @ bcel ---
+[INFO] Surefire report directory: <CHECKOUT>/target/surefire-reports
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] parallel='none', perCoreThreadCount=true, threadCount=0, useUnlimitedThreads=false, threadCountSuites=0, threadCountClasses=0, threadCountMethods=0, parallelOptimized=true, enableOutErrElements=true, enablePropertiesElement=true
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.bcel.classfile.UnknownTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.123 s -- in org.apache.bcel.classfile.UnknownTest
+[INFO] Running org.apache.bcel.classfile.ElementValueNestingTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.020 s -- in org.apache.bcel.classfile.ElementValueNestingTest
+[INFO] Running org.apache.bcel.classfile.BootstrapMethodCopyTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s -- in org.apache.bcel.classfile.BootstrapMethodCopyTest
+[INFO] Running org.apache.bcel.classfile.AttributeTagTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in org.apache.bcel.classfile.AttributeTagTest
+[INFO] Running org.apache.bcel.classfile.BootstrapMethodTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in org.apache.bcel.classfile.BootstrapMethodTest
+[INFO] Running org.apache.bcel.classfile.ConstantTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.apache.bcel.classfile.ConstantTest
+[INFO] Running org.apache.bcel.classfile.CodeTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.056 s -- in org.apache.bcel.classfile.CodeTest
+[INFO] Running org.apache.bcel.classfile.ConstantPoolModuleToStringTest
+[INFO] Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.444 s -- in org.apache.bcel.classfile.ConstantPoolModuleToStringTest
+[INFO] Running org.apache.bcel.classfile.AttributeNestingTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s -- in org.apache.bcel.classfile.AttributeNestingTest
+[INFO] Running org.apache.bcel.classfile.RecordTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.020 s -- in org.apache.bcel.classfile.RecordTest
+[INFO] Running org.apache.bcel.classfile.InvalidMethodSigantureTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 s -- in org.apache.bcel.classfile.InvalidMethodSigantureTest
+[INFO] Running org.apache.bcel.classfile.DumpU2OverflowTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in org.apache.bcel.classfile.DumpU2OverflowTest
+[INFO] Running org.apache.bcel.classfile.PMGClassTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.apache.bcel.classfile.PMGClassTest
+[INFO] Running org.apache.bcel.classfile.PermittedSubclassesTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in org.apache.bcel.classfile.PermittedSubclassesTest
+[INFO] Running org.apache.bcel.classfile.LocalVariableTableTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.apache.bcel.classfile.LocalVariableTableTest
+[INFO] Running org.apache.bcel.classfile.UtilityEncodeDecodeTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.043 s -- in org.apache.bcel.classfile.UtilityEncodeDecodeTest
+[INFO] Running org.apache.bcel.classfile.ConstantPoolModuleAccessTest
+[INFO] Tests run: 78, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.159 s -- in org.apache.bcel.classfile.ConstantPoolModuleAccessTest
+[INFO] Running org.apache.bcel.classfile.Jira368Test
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.036 s -- in org.apache.bcel.classfile.Jira368Test
+[INFO] Running org.apache.bcel.classfile.SyntheticTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.apache.bcel.classfile.SyntheticTest
+[INFO] Running org.apache.bcel.classfile.FieldTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.apache.bcel.classfile.FieldTest
+[INFO] Running org.apache.bcel.classfile.ConstantPoolTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.291 s -- in org.apache.bcel.classfile.ConstantPoolTest
+[INFO] Running org.apache.bcel.classfile.JavaClassCyclicTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in org.apache.bcel.classfile.JavaClassCyclicTest
+[INFO] Running org.apache.bcel.classfile.LocalVariableTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.bcel.classfile.LocalVariableTest
+[INFO] Running org.apache.bcel.classfile.DeprecatedTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.apache.bcel.classfile.DeprecatedTest
+[INFO] Running org.apache.bcel.classfile.SignatureTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in org.apache.bcel.classfile.SignatureTest
+[INFO] Running org.apache.bcel.classfile.StackMapTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in org.apache.bcel.classfile.StackMapTest
+[INFO] Running org.apache.bcel.classfile.ClassParserTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.bcel.classfile.ClassParserTest
+[INFO] Running org.apache.bcel.classfile.JavaClassTest
+[INFO] Tests run: 2454, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.243 s -- in org.apache.bcel.classfile.JavaClassTest
+[INFO] Running org.apache.bcel.classfile.UtilityTest
+[INFO] Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.094 s -- in org.apache.bcel.classfile.UtilityTest
+[INFO] Running org.apache.bcel.classfile.ConstantDynamicTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.bcel.classfile.ConstantDynamicTest
+[INFO] Running org.apache.bcel.ConstTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.apache.bcel.ConstTest
+[INFO] Running org.apache.bcel.OssFuzzTest
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.036 s -- in org.apache.bcel.OssFuzzTest
+[INFO] Running org.apache.bcel.ElementValueGenTest
+[INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.apache.bcel.ElementValueGenTest
+[INFO] Running org.apache.bcel.AnnotationAccessFlagTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.apache.bcel.AnnotationAccessFlagTest
+[INFO] Running org.apache.bcel.util.CodeHTMLNarrowingTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.046 s -- in org.apache.bcel.util.CodeHTMLNarrowingTest
+[INFO] Running org.apache.bcel.util.ClassPathTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.027 s -- in org.apache.bcel.util.ClassPathTest
+[INFO] Running org.apache.bcel.util.LruCacheClassPathRepositoryTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in org.apache.bcel.util.LruCacheClassPathRepositoryTest
+[INFO] Running org.apache.bcel.util.RepositoryNameMismatchTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.apache.bcel.util.RepositoryNameMismatchTest
+[INFO] Running org.apache.bcel.util.InstructionFinderTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in org.apache.bcel.util.InstructionFinderTest
+[INFO] Running org.apache.bcel.util.Class2HTMLTraversalTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.apache.bcel.util.Class2HTMLTraversalTest
+[INFO] Running org.apache.bcel.util.BCELifierTest
+[INFO] Tests run: 58, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 53.87 s -- in org.apache.bcel.util.BCELifierTest
+[INFO] Running org.apache.bcel.util.ModularRuntimeImageTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.043 s -- in org.apache.bcel.util.ModularRuntimeImageTest
+[INFO] Running org.apache.bcel.util.Class2HTMLTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in org.apache.bcel.util.Class2HTMLTest
+[INFO] Running org.apache.bcel.util.Class2HTMLXSSTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.apache.bcel.util.Class2HTMLXSSTest
+[INFO] Running org.apache.bcel.util.ClassPathRepositoryTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s -- in org.apache.bcel.util.ClassPathRepositoryTest
+[INFO] Running org.apache.bcel.AnonymousClassTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.apache.bcel.AnonymousClassTest
+[INFO] Running org.apache.bcel.InstructionFinderTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.apache.bcel.InstructionFinderTest
+[INFO] Running org.apache.bcel.AnnotationDefaultAttributeTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.bcel.AnnotationDefaultAttributeTest
+[INFO] Running org.apache.bcel.HandleTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.163 s -- in org.apache.bcel.HandleTest
+[INFO] Running org.apache.bcel.PLSETest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.388 s -- in org.apache.bcel.PLSETest
+[INFO] Running org.apache.bcel.PerformanceTest
+Parsing /usr/lib/jvm/java-17-openjdk-amd64/lib/jrt-fs.jar
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.135 s -- in org.apache.bcel.PerformanceTest
+[INFO] Running org.apache.bcel.generic.I2LTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.apache.bcel.generic.I2LTest
+[INFO] Running org.apache.bcel.generic.LDIVTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in org.apache.bcel.generic.LDIVTest
+[INFO] Running org.apache.bcel.generic.MULTIANEWARRAYTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.bcel.generic.MULTIANEWARRAYTest
+[INFO] Running org.apache.bcel.generic.L2ITest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.bcel.generic.L2ITest
+[INFO] Running org.apache.bcel.generic.FieldAnnotationsTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.apache.bcel.generic.FieldAnnotationsTest
+[INFO] Running org.apache.bcel.generic.LocalVariableInstructionTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.bcel.generic.LocalVariableInstructionTest
+[INFO] Running org.apache.bcel.generic.SWITCHTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in org.apache.bcel.generic.SWITCHTest
+[INFO] Running org.apache.bcel.generic.DDIVTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in org.apache.bcel.generic.DDIVTest
+[INFO] Running org.apache.bcel.generic.IINCTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.apache.bcel.generic.IINCTest
+[INFO] Running org.apache.bcel.generic.IORTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in org.apache.bcel.generic.IORTest
+[INFO] Running org.apache.bcel.generic.MethodGenTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in org.apache.bcel.generic.MethodGenTest
+[INFO] Running org.apache.bcel.generic.BasicTypeTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.bcel.generic.BasicTypeTest
+[INFO] Running org.apache.bcel.generic.BranchHandleTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.apache.bcel.generic.BranchHandleTest
+[INFO] Running org.apache.bcel.generic.I2CTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.bcel.generic.I2CTest
+[INFO] Running org.apache.bcel.generic.INVOKEINTERFACETest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.bcel.generic.INVOKEINTERFACETest
+[INFO] Running org.apache.bcel.generic.EmptyVisitorTest
+[INFO] Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.093 s -- in org.apache.bcel.generic.EmptyVisitorTest
+[INFO] Running org.apache.bcel.generic.LSUBTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.bcel.generic.LSUBTest
+[INFO] Running org.apache.bcel.generic.InstructionFactoryTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.apache.bcel.generic.InstructionFactoryTest
+[INFO] Running org.apache.bcel.generic.LADDTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in org.apache.bcel.generic.LADDTest
+[INFO] Running org.apache.bcel.generic.LNEGTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in org.apache.bcel.generic.LNEGTest
+[INFO] Running org.apache.bcel.generic.GETFIELDTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in org.apache.bcel.generic.GETFIELDTest
+[INFO] Running org.apache.bcel.generic.AnnotationGenTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in org.apache.bcel.generic.AnnotationGenTest
+[INFO] Running org.apache.bcel.generic.LCMPTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in org.apache.bcel.generic.LCMPTest
+[INFO] Running org.apache.bcel.generic.INVOKEDYNAMICTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in org.apache.bcel.generic.INVOKEDYNAMICTest
+[INFO] Running org.apache.bcel.generic.LREMTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.bcel.generic.LREMTest
+[INFO] Running org.apache.bcel.generic.ClassGenTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in org.apache.bcel.generic.ClassGenTest
+[INFO] Running org.apache.bcel.generic.IMULTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in org.apache.bcel.generic.IMULTest
+[INFO] Running org.apache.bcel.generic.IMPDEP2Test
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in org.apache.bcel.generic.IMPDEP2Test
+[INFO] Running org.apache.bcel.generic.L2FTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.bcel.generic.L2FTest
+[INFO] Running org.apache.bcel.generic.LMULTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in org.apache.bcel.generic.LMULTest
+[INFO] Running org.apache.bcel.generic.ObjectTypeTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in org.apache.bcel.generic.ObjectTypeTest
+[INFO] Running org.apache.bcel.generic.I2DTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.bcel.generic.I2DTest
+[INFO] Running org.apache.bcel.generic.IMPDEP1Test
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in org.apache.bcel.generic.IMPDEP1Test
+[INFO] Running org.apache.bcel.generic.IANDTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.bcel.generic.IANDTest
+[INFO] Running org.apache.bcel.generic.LSHLTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in org.apache.bcel.generic.LSHLTest
+[INFO] Running org.apache.bcel.generic.ISHRTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in org.apache.bcel.generic.ISHRTest
+[INFO] Running org.apache.bcel.generic.FieldGenTest
+[WARNING] Tests run: 7, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.009 s -- in org.apache.bcel.generic.FieldGenTest
+[INFO] Running org.apache.bcel.generic.FNEGTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.bcel.generic.FNEGTest
+[INFO] Running org.apache.bcel.generic.F2ITest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.bcel.generic.F2ITest
+[INFO] Running org.apache.bcel.generic.IXORTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.bcel.generic.IXORTest
+[INFO] Running org.apache.bcel.generic.DREMTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.bcel.generic.DREMTest
+[INFO] Running org.apache.bcel.generic.I2BTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.bcel.generic.I2BTest
+[INFO] Running org.apache.bcel.generic.PUTSTATICTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.bcel.generic.PUTSTATICTest
+[INFO] Running org.apache.bcel.generic.ArrayTypeTest
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.apache.bcel.generic.ArrayTypeTest
+[INFO] Running org.apache.bcel.generic.IADDTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in org.apache.bcel.generic.IADDTest
+[INFO] Running org.apache.bcel.generic.F2LTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.bcel.generic.F2LTest
+[INFO] Running org.apache.bcel.generic.LANDTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.bcel.generic.LANDTest
+[INFO] Running org.apache.bcel.generic.LOOKUPSWITCHTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in org.apache.bcel.generic.LOOKUPSWITCHTest
+[INFO] Running org.apache.bcel.generic.IREMTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.bcel.generic.IREMTest
+[INFO] Running org.apache.bcel.generic.I2STest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.bcel.generic.I2STest
+[INFO] Running org.apache.bcel.generic.FADDTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in org.apache.bcel.generic.FADDTest
+[INFO] Running org.apache.bcel.generic.ConstantPoolGenKeyCollisionTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.apache.bcel.generic.ConstantPoolGenKeyCollisionTest
+[INFO] Running org.apache.bcel.generic.SetIndexBoundsTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.apache.bcel.generic.SetIndexBoundsTest
+[INFO] Running org.apache.bcel.generic.SwitchAllocationTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.apache.bcel.generic.SwitchAllocationTest
+[INFO] Running org.apache.bcel.generic.IDIVTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.bcel.generic.IDIVTest
+[INFO] Running org.apache.bcel.generic.D2LTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.bcel.generic.D2LTest
+[INFO] Running org.apache.bcel.generic.PUTFIELDTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.bcel.generic.PUTFIELDTest
+[INFO] Running org.apache.bcel.generic.InstructionHandleTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.apache.bcel.generic.InstructionHandleTest
+[INFO] Running org.apache.bcel.generic.ISUBTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.bcel.generic.ISUBTest
+[INFO] Running org.apache.bcel.generic.DADDTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in org.apache.bcel.generic.DADDTest
+[INFO] Running org.apache.bcel.generic.TypeTest
+[INFO] Tests run: 28, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.055 s -- in org.apache.bcel.generic.TypeTest
+[INFO] Running org.apache.bcel.generic.DSUBTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in org.apache.bcel.generic.DSUBTest
+[INFO] Running org.apache.bcel.generic.I2FTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.bcel.generic.I2FTest
+[INFO] Running org.apache.bcel.generic.BREAKPOINTTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.bcel.generic.BREAKPOINTTest
+[INFO] Running org.apache.bcel.generic.D2FTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in org.apache.bcel.generic.D2FTest
+[INFO] Running org.apache.bcel.generic.FSUBTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.bcel.generic.FSUBTest
+[INFO] Running org.apache.bcel.generic.GeneratingAnnotatedClassesTest
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s -- in org.apache.bcel.generic.GeneratingAnnotatedClassesTest
+[INFO] Running org.apache.bcel.generic.ParameterAnnotationVisibilityTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.bcel.generic.ParameterAnnotationVisibilityTest
+[INFO] Running org.apache.bcel.generic.DNEGTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in org.apache.bcel.generic.DNEGTest
+[INFO] Running org.apache.bcel.generic.D2ITest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.bcel.generic.D2ITest
+[INFO] Running org.apache.bcel.generic.JiraBcel362Test
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.bcel.generic.JiraBcel362Test
+[INFO] Running org.apache.bcel.generic.LORTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.bcel.generic.LORTest
+[INFO] Running org.apache.bcel.generic.L2DTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in org.apache.bcel.generic.L2DTest
+[INFO] Running org.apache.bcel.generic.FDIVTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.bcel.generic.FDIVTest
+[INFO] Running org.apache.bcel.generic.FREMTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.bcel.generic.FREMTest
+[INFO] Running org.apache.bcel.generic.ISHLTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.bcel.generic.ISHLTest
+[INFO] Running org.apache.bcel.generic.JdkGenericDumpTest
+/usr/lib/jvm/java-17-openjdk-amd64/lib/jrt-fs.jar
+src/test/resources/jpms/empty/empty.jmod
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.603 s -- in org.apache.bcel.generic.JdkGenericDumpTest
+[INFO] Running org.apache.bcel.generic.INEGTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.bcel.generic.INEGTest
+[INFO] Running org.apache.bcel.generic.DMULTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.apache.bcel.generic.DMULTest
+[INFO] Running org.apache.bcel.generic.LXORTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.bcel.generic.LXORTest
+[INFO] Running org.apache.bcel.generic.LSHRTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.bcel.generic.LSHRTest
+[INFO] Running org.apache.bcel.generic.F2DTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.bcel.generic.F2DTest
+[INFO] Running org.apache.bcel.generic.FMULTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.bcel.generic.FMULTest
+[INFO] Running org.apache.bcel.EnumAccessFlagTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.bcel.EnumAccessFlagTest
+[INFO] Running org.apache.bcel.EnclosingMethodAttributeTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.apache.bcel.EnclosingMethodAttributeTest
+[INFO] Running org.apache.bcel.LocalVariableTypeTableTest
+a1
+b1
+c1
+d2
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.apache.bcel.LocalVariableTypeTableTest
+[INFO] Running org.apache.bcel.verifier.VerifyJavaUtilTest
+[WARNING] Tests run: 3, Failures: 0, Errors: 0, Skipped: 3, Time elapsed: 0 s -- in org.apache.bcel.verifier.VerifyJavaUtilTest
+[INFO] Running org.apache.bcel.verifier.TransitiveHullTest
+[WARNING] Tests run: 5, Failures: 0, Errors: 0, Skipped: 5, Time elapsed: 0.001 s -- in org.apache.bcel.verifier.TransitiveHullTest
+[INFO] Running org.apache.bcel.verifier.VerifyJavaMathTest
+[WARNING] Tests run: 2, Failures: 0, Errors: 0, Skipped: 2, Time elapsed: 0.001 s -- in org.apache.bcel.verifier.VerifyJavaMathTest
+[INFO] Running org.apache.bcel.verifier.VerifierArrayAccessTest
+[INFO] Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.161 s -- in org.apache.bcel.verifier.VerifierArrayAccessTest
+[INFO] Running org.apache.bcel.verifier.VerifierTest
+[WARNING] Tests run: 10, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 1.812 s -- in org.apache.bcel.verifier.VerifierTest
+[INFO] Running org.apache.bcel.verifier.JiraBcel369Test
+Pass 1:
+VERIFIED_OK
+Passed verification.
+
+Pass 2:
+VERIFIED_OK
+Passed verification.
+
+Pass 3a, method number 0 ['void <init>(int i) [MethodParameters]']:
+VERIFIED_OK
+Passed verification.
+
+Pass 3b, method number 0 ['void <init>(int i) [MethodParameters]']:
+VERIFIED_OK
+Passed verification.
+
+Warnings:
+Pass 2: Attribute 'MethodParameters' as an attribute of Method 'void <init>(int i) [MethodParameters]' is unknown and will therefore be ignored.
+Pass 2: Attribute 'MethodParameters' as an attribute of Method 'void <init>(int i) [MethodParameters]' is neither Code nor Exceptions and is therefore only of use for debuggers and such.
+Pass 2: Attribute '<LineNumberTable: LineNumber(0, 23), LineNumber(4, 25), LineNumber(7, 27), LineNumber(11, 28), 
+LineNumber(12, 30), LineNumber(15, 31), LineNumber(18, 32), LineNumber(21, 27), 
+LineNumber(26, 28), LineNumber(27, 30), LineNumber(31, 31), LineNumber(34, 32), 
+LineNumber(36, 33), LineNumber(39, 34)>' as an attribute of Code attribute '<CODE>' (method 'void <init>(int i) [MethodParameters]') will effectively be ignored and is only useful for debuggers and such.
+Pass 2: Attribute '<LocalVariableTable: LocalVariable(startPc = 15, length = 3, index = 2:int u)
+LocalVariable(startPc = 31, length = 3, index = 4:int u)
+LocalVariable(startPc = 0, length = 40, index = 0:org.apache.bcel.verifier.JiraBcel369TestFixture this)
+LocalVariable(startPc = 0, length = 40, index = 1:int i)>' as an attribute of Code attribute '<CODE>' (method 'void <init>(int i) [MethodParameters]') will effectively be ignored and is only useful for debuggers and such.
+Pass 2: Attribute 'StackMap(
+@012 (FULL, offset delta=12, locals={(type=Object, class=org.apache.bcel.verifier.JiraBcel369TestFixture), (type=Integer)}), 
+@021 (SAME_LOCALS_1_STACK, offset delta=8, stack items={(type=Object, class=java.lang.Throwable)}), 
+@027 (APPEND 2, offset delta=5, locals={(type=Bogus), (type=Object, class=java.lang.Throwable)}), 
+@036 (CHOP 2, offset delta=8))' as an attribute of Code attribute '<CODE>' (method 'void <init>(int i) [MethodParameters]') is unknown and will therefore be ignored.
+
+
+[WARNING] Tests run: 2, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.010 s -- in org.apache.bcel.verifier.JiraBcel369Test
+[INFO] Running org.apache.bcel.verifier.VerifyBadClassesTest
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.713 s -- in org.apache.bcel.verifier.VerifyBadClassesTest
+[INFO] Running org.apache.bcel.verifier.JiraBcel370Test
+Pass 1:
+VERIFIED_OK
+Passed verification.
+
+Pass 2:
+VERIFIED_OK
+Passed verification.
+
+Pass 3a, method number 0 ['public void <init>(int a) [MethodParameters]']:
+VERIFIED_OK
+Passed verification.
+
+Pass 3b, method number 0 ['public void <init>(int a) [MethodParameters]']:
+VERIFIED_OK
+Passed verification.
+
+Pass 3a, method number 1 ['public int getA()']:
+VERIFIED_OK
+Passed verification.
+
+Pass 3b, method number 1 ['public int getA()']:
+VERIFIED_OK
+Passed verification.
+
+Pass 3a, method number 2 ['private static synthetic boolean[] $jacocoInit(java.lang.invoke.MethodHandles$Lookup arg0, String arg1, Class arg2)']:
+VERIFIED_REJECTED
+Instruction invokestatic[184](3) 43 constraint violated: Class 'org.jacoco.agent.rt.internal_43a39aa.Offline' is referenced, but cannot be loaded: 'VERIFIED_REJECTED
+Repository.lookup() failed. FILE NOT FOUND?
+'.
+
+Pass 3b, method number 2 ['private static synthetic boolean[] $jacocoInit(java.lang.invoke.MethodHandles$Lookup arg0, String arg1, Class arg2)']:
+VERIFIED_NOTYET
+Not yet verified.
+
+Warnings:
+Pass 2: Attribute 'BootstrapMethods(1):
+  0: invokeStatic com.foo.Foo.$jacocoInit (Ljava.lang.invoke.MethodHandles$Lookup;Ljava.lang.String;Ljava.lang.Class;)[Z' as an attribute of the ClassFile structure 'class com.foo.Foo extends java.lang.Object
+file name		com.foo.Foo
+compiled from		Foo.java
+compiler version	61.0
+access flags		32
+constant pool		45 entries
+ACC_SUPER flag		true
+
+Attribute(s):
+	SourceFile: Foo.java
+	BootstrapMethods(1):
+	  0: invokeStatic com.foo.Foo.$jacocoInit (Ljava.lang.invoke.MethodHandles$Lookup;Ljava.lang.String;Ljava.lang.Class;)[Z
+
+1 fields:
+	int a
+
+3 methods:
+	public void <init>(int a) [MethodParameters]
+	public int getA()
+	private static synthetic boolean[] $jacocoInit(java.lang.invoke.MethodHandles$Lookup arg0, String arg1, Class arg2)
+' is unknown and will therefore be ignored.
+Pass 2: Attribute 'MethodParameters' as an attribute of Method 'public void <init>(int a) [MethodParameters]' is unknown and will therefore be ignored.
+Pass 2: Attribute 'MethodParameters' as an attribute of Method 'public void <init>(int a) [MethodParameters]' is neither Code nor Exceptions and is therefore only of use for debuggers and such.
+Pass 2: Attribute '<LineNumberTable: LineNumber(6, 6), LineNumber(10, 7), LineNumber(15, 8)>' as an attribute of Code attribute '<CODE>' (method 'public void <init>(int a) [MethodParameters]') will effectively be ignored and is only useful for debuggers and such.
+Pass 2: Attribute '<LocalVariableTable: LocalVariable(startPc = 0, length = 20, index = 0:com.foo.Foo this)
+LocalVariable(startPc = 0, length = 20, index = 1:int a)>' as an attribute of Code attribute '<CODE>' (method 'public void <init>(int a) [MethodParameters]') will effectively be ignored and is only useful for debuggers and such.
+Pass 2: Attribute '<LineNumberTable: LineNumber(6, 11)>' as an attribute of Code attribute '<CODE>' (method 'public int getA()') will effectively be ignored and is only useful for debuggers and such.
+Pass 2: Attribute '<LocalVariableTable: LocalVariable(startPc = 0, length = 15, index = 0:com.foo.Foo this)>' as an attribute of Code attribute '<CODE>' (method 'public int getA()') will effectively be ignored and is only useful for debuggers and such.
+Pass 2: Method 'private static synthetic boolean[] $jacocoInit(java.lang.invoke.MethodHandles$Lookup arg0, String arg1, Class arg2)' has access flag(s) other than ACC_PUBLIC, ACC_PRIVATE, ACC_PROTECTED, ACC_STATIC, ACC_FINAL, ACC_SYNCHRONIZED, ACC_NATIVE, ACC_ABSTRACT, ACC_STRICT set (ignored).
+
+
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in org.apache.bcel.verifier.JiraBcel370Test
+[INFO] Running org.apache.bcel.verifier.VerifyJavaHomesTest
+[WARNING] Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 s -- in org.apache.bcel.verifier.VerifyJavaHomesTest
+[INFO] Running org.apache.bcel.verifier.statics.Pass2VerifierTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.apache.bcel.verifier.statics.Pass2VerifierTest
+[INFO] Running org.apache.bcel.verifier.statics.Pass3aVerifierTest
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+[INFO] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.929 s -- in org.apache.bcel.verifier.statics.Pass3aVerifierTest
+[INFO] Running org.apache.bcel.verifier.statics.LocalVariableInfoTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.058 s -- in org.apache.bcel.verifier.statics.LocalVariableInfoTest
+[INFO] Running org.apache.bcel.verifier.VerifierFactoryTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.apache.bcel.verifier.VerifierFactoryTest
+[INFO] Running org.apache.bcel.verifier.structurals.UninitializedObjectTypeTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.apache.bcel.verifier.structurals.UninitializedObjectTypeTest
+[INFO] Running org.apache.bcel.verifier.structurals.InstConstraintVisitorTest
+[INFO] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.175 s -- in org.apache.bcel.verifier.structurals.InstConstraintVisitorTest
+[INFO] Running org.apache.bcel.verifier.VerifierReturnTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.273 s -- in org.apache.bcel.verifier.VerifierReturnTest
+[INFO] Running org.apache.bcel.verifier.VerifierThrowTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.apache.bcel.verifier.VerifierThrowTest
+[INFO] Running org.apache.bcel.verifier.VerifierInvokeTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.172 s -- in org.apache.bcel.verifier.VerifierInvokeTest
+[INFO] Running org.apache.bcel.verifier.JiraBcel291Test
+[WARNING] Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 s -- in org.apache.bcel.verifier.JiraBcel291Test
+[INFO] Running org.apache.bcel.verifier.VerifierMainTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.192 s -- in org.apache.bcel.verifier.VerifierMainTest
+[INFO] Running org.apache.bcel.CounterVisitorTest
+[INFO] Tests run: 39, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.049 s -- in org.apache.bcel.CounterVisitorTest
+[INFO] Running org.apache.bcel.AnnotationEntryTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.apache.bcel.AnnotationEntryTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 3090, Failures: 0, Errors: 0, Skipped: 15
+[INFO] 
+[INFO] 
+[INFO] --- jar:3.5.1:jar (default-jar) @ bcel ---
+[INFO] Building jar: <CHECKOUT>/target/bcel-6.14.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- jar:3.5.1:test-jar (default) @ bcel ---
+[INFO] Building jar: <CHECKOUT>/target/bcel-6.14.0-SNAPSHOT-tests.jar
+[INFO] 
+[INFO] >>> source:3.4.0:jar (attach-sources) > generate-sources @ bcel >>>
+[INFO] 
+[INFO] --- enforcer:3.6.3:enforce (enforce-maven-version) @ bcel ---
+[INFO] 
+[INFO] --- enforcer:3.6.3:enforce (enforce-java-version) @ bcel ---
+[INFO] 
+[INFO] --- apache-rat:0.18:check (rat-check) @ bcel ---
+[INFO] No issues found.
+[INFO] 
+[INFO] --- artifact:3.7.0:check-buildplan (check-buildplan) @ bcel ---
+[INFO] No known issue in 20 plugins
+[INFO] 
+[INFO] --- build-helper:3.6.2:parse-version (parse-version) @ bcel ---
+[INFO] 
+[INFO] --- antrun:3.2.0:run (javadoc.resources) @ bcel ---
+[INFO] Executing tasks
+[INFO] Executed tasks
+[INFO] 
+[INFO] <<< source:3.4.0:jar (attach-sources) < generate-sources @ bcel <<<
+[INFO] 
+[INFO] 
+[INFO] --- source:3.4.0:jar (attach-sources) @ bcel ---
+[INFO] Building jar: <CHECKOUT>/target/bcel-6.14.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- source:3.4.0:jar-no-fork (attach-sources) @ bcel ---
+[INFO] Artifact org.apache.bcel:bcel:java-source:sources:6.14.0-SNAPSHOT already attached to target/bcel-6.14.0-SNAPSHOT-sources.jar: ignoring same re-attach (same artifact, same file)
+[INFO] 
+[INFO] --- source:3.4.0:test-jar-no-fork (attach-sources) @ bcel ---
+[INFO] Building jar: <CHECKOUT>/target/bcel-6.14.0-SNAPSHOT-test-sources.jar
+[INFO] 
+[INFO] --- cyclonedx:2.9.3:makeAggregateBom (build-sbom-cyclonedx) @ bcel ---
+[INFO] CycloneDX: Resolving Dependencies
+[INFO] CycloneDX: Creating BOM version 1.6 with 2 component(s)
+[INFO] CycloneDX: Writing and validating BOM (XML): <CHECKOUT>/target/bcel-6.14.0-SNAPSHOT-bom.xml
+[INFO]            attaching as bcel-6.14.0-SNAPSHOT-cyclonedx.xml
+[INFO] CycloneDX: Writing and validating BOM (JSON): <CHECKOUT>/target/bcel-6.14.0-SNAPSHOT-bom.json
+[WARNING] Unknown keyword meta:enum - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword or if it should generate annotations AnnotationKeyword
+[WARNING] Unknown keyword deprecated - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword or if it should generate annotations AnnotationKeyword
+[INFO]            attaching as bcel-6.14.0-SNAPSHOT-cyclonedx.json
+[INFO] 
+[INFO] --- spdx:1.0.4:createSPDX (build-sbom-spdx) @ bcel ---
+[INFO] spdx file type = .json
+[INFO] Creating SPDX File <CHECKOUT>/target/site/org.apache.bcel_bcel-6.14.0-SNAPSHOT.spdx.json
+[WARNING] IO Exception opening web page for JSON for SPDX listed licenses.  Using cached version
+[ERROR] I/O error reading license TOC
+java.net.UnknownHostException: spdx.org
+    at sun.nio.ch.NioSocketImpl.connect (NioSocketImpl.java:572)
+    at java.net.SocksSocketImpl.connect (SocksSocketImpl.java:327)
+    at java.net.Socket.connect (Socket.java:633)
+    at sun.security.ssl.SSLSocketImpl.connect (SSLSocketImpl.java:304)
+    at sun.security.ssl.BaseSSLSocketImpl.connect (BaseSSLSocketImpl.java:174)
+    at sun.net.NetworkClient.doConnect (NetworkClient.java:183)
+    at sun.net.www.http.HttpClient.openServer (HttpClient.java:533)
+    at sun.net.www.http.HttpClient.openServer (HttpClient.java:638)
+    at sun.net.www.protocol.https.HttpsClient.<init> (HttpsClient.java:267)
+    at sun.net.www.protocol.https.HttpsClient.New (HttpsClient.java:381)
+    at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.getNewHttpClient (AbstractDelegateHttpsURLConnection.java:196)
+    at sun.net.www.protocol.http.HttpURLConnection.plainConnect0 (HttpURLConnection.java:1262)
+    at sun.net.www.protocol.http.HttpURLConnection.plainConnect (HttpURLConnection.java:1148)
+    at sun.net.www.protocol.http.HttpURLConnection.connect (HttpURLConnection.java:1077)
+    at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect (AbstractDelegateHttpsURLConnection.java:181)
+    at sun.net.www.protocol.http.HttpURLConnection.getInputStream0 (HttpURLConnection.java:1717)
+    at sun.net.www.protocol.http.HttpURLConnection.getInputStream (HttpURLConnection.java:1641)
+    at java.net.HttpURLConnection.getResponseCode (HttpURLConnection.java:529)
+    at sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode (HttpsURLConnectionImpl.java:308)
+    at org.spdx.utility.DownloadCache.processPossibleRedirect (DownloadCache.java:397)
+    at org.spdx.utility.DownloadCache.getUrlInputStreamDirect (DownloadCache.java:248)
+    at org.spdx.utility.DownloadCache.getUrlInputStream (DownloadCache.java:231)
+    at org.spdx.utility.DownloadCache.getUrlInputStream (DownloadCache.java:177)
+    at org.spdx.storage.listedlicense.SpdxListedLicenseWebStore.getUrlInputStream (SpdxListedLicenseWebStore.java:42)
+    at org.spdx.storage.listedlicense.SpdxListedLicenseWebStore.getTocInputStream (SpdxListedLicenseWebStore.java:47)
+    at org.spdx.storage.listedlicense.SpdxListedLicenseModelStore.loadIds (SpdxListedLicenseModelStore.java:161)
+    at org.spdx.storage.listedlicense.SpdxListedLicenseModelStore.<init> (SpdxListedLicenseModelStore.java:117)
+    at org.spdx.storage.listedlicense.SpdxListedLicenseWebStore.<init> (SpdxListedLicenseWebStore.java:38)
+    at org.spdx.library.ListedLicenses.initializeLicenseModelStore (ListedLicenses.java:93)
+    at org.spdx.library.ListedLicenses.<init> (ListedLicenses.java:74)
+    at org.spdx.library.ListedLicenses.getListedLicenses (ListedLicenses.java:137)
+    at org.spdx.library.LicenseInfoFactory.isSpdxListedLicenseId (LicenseInfoFactory.java:350)
+    at org.spdx.utility.license.LicenseExpressionParser.parseSimpleLicenseTokenCompatV2 (LicenseExpressionParser.java:588)
+    at org.spdx.utility.license.LicenseExpressionParser.parseLicenseExpressionCompatV2 (LicenseExpressionParser.java:331)
+    at org.spdx.utility.license.LicenseExpressionParser.parseLicenseExpressionCompatV2 (LicenseExpressionParser.java:164)
+    at org.spdx.library.LicenseInfoFactory.parseSPDXLicenseStringCompatV2 (LicenseInfoFactory.java:112)
+    at org.spdx.maven.utils.SpdxV2LicenseManager.mavenLicenseToSpdxLicense (SpdxV2LicenseManager.java:207)
+    at org.spdx.maven.utils.SpdxV2LicenseManager.mavenLicenseListToSpdxLicense (SpdxV2LicenseManager.java:162)
+    at org.spdx.maven.utils.SpdxV2DocumentBuilder.mavenLicenseListToSpdxLicenseExpression (SpdxV2DocumentBuilder.java:484)
+    at org.spdx.maven.CreateSpdxMojo.getSpdxProjectInfoFromParameters (CreateSpdxMojo.java:978)
+    at org.spdx.maven.CreateSpdxMojo.execute (CreateSpdxMojo.java:600)
+    at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo (DefaultBuildPluginManager.java:126)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute2 (MojoExecutor.java:328)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute (MojoExecutor.java:316)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:212)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:174)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.access$000 (MojoExecutor.java:75)
+    at org.apache.maven.lifecycle.internal.MojoExecutor$1.run (MojoExecutor.java:162)
+    at org.apache.maven.plugin.DefaultMojosExecutionStrategy.execute (DefaultMojosExecutionStrategy.java:39)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:159)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:105)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:73)
+    at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build (SingleThreadedBuilder.java:53)
+    at org.apache.maven.lifecycle.internal.LifecycleStarter.execute (LifecycleStarter.java:118)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:261)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:173)
+    at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:101)
+    at org.apache.maven.cli.MavenCli.execute (MavenCli.java:906)
+    at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:283)
+    at org.apache.maven.cli.MavenCli.main (MavenCli.java:206)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:77)
+    at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:569)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:255)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:201)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:361)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:314)
+[WARNING] Unable to access the most current listed licenses from https://spdx.org/licenses - using locally cached licenses: I/O error reading license TOC Note: you can set the org.spdx.useJARLicenseInfoOnly property to true to avoid this warning.
+org.spdx.library.model.v2.license.SpdxListedLicenseException: I/O error reading license TOC
+    at org.spdx.storage.listedlicense.SpdxListedLicenseModelStore.loadIds (SpdxListedLicenseModelStore.java:187)
+    at org.spdx.storage.listedlicense.SpdxListedLicenseModelStore.<init> (SpdxListedLicenseModelStore.java:117)
+    at org.spdx.storage.listedlicense.SpdxListedLicenseWebStore.<init> (SpdxListedLicenseWebStore.java:38)
+    at org.spdx.library.ListedLicenses.initializeLicenseModelStore (ListedLicenses.java:93)
+    at org.spdx.library.ListedLicenses.<init> (ListedLicenses.java:74)
+    at org.spdx.library.ListedLicenses.getListedLicenses (ListedLicenses.java:137)
+    at org.spdx.library.LicenseInfoFactory.isSpdxListedLicenseId (LicenseInfoFactory.java:350)
+    at org.spdx.utility.license.LicenseExpressionParser.parseSimpleLicenseTokenCompatV2 (LicenseExpressionParser.java:588)
+    at org.spdx.utility.license.LicenseExpressionParser.parseLicenseExpressionCompatV2 (LicenseExpressionParser.java:331)
+    at org.spdx.utility.license.LicenseExpressionParser.parseLicenseExpressionCompatV2 (LicenseExpressionParser.java:164)
+    at org.spdx.library.LicenseInfoFactory.parseSPDXLicenseStringCompatV2 (LicenseInfoFactory.java:112)
+    at org.spdx.maven.utils.SpdxV2LicenseManager.mavenLicenseToSpdxLicense (SpdxV2LicenseManager.java:207)
+    at org.spdx.maven.utils.SpdxV2LicenseManager.mavenLicenseListToSpdxLicense (SpdxV2LicenseManager.java:162)
+    at org.spdx.maven.utils.SpdxV2DocumentBuilder.mavenLicenseListToSpdxLicenseExpression (SpdxV2DocumentBuilder.java:484)
+    at org.spdx.maven.CreateSpdxMojo.getSpdxProjectInfoFromParameters (CreateSpdxMojo.java:978)
+    at org.spdx.maven.CreateSpdxMojo.execute (CreateSpdxMojo.java:600)
+    at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo (DefaultBuildPluginManager.java:126)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute2 (MojoExecutor.java:328)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute (MojoExecutor.java:316)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:212)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:174)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.access$000 (MojoExecutor.java:75)
+    at org.apache.maven.lifecycle.internal.MojoExecutor$1.run (MojoExecutor.java:162)
+    at org.apache.maven.plugin.DefaultMojosExecutionStrategy.execute (DefaultMojosExecutionStrategy.java:39)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:159)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:105)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:73)
+    at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build (SingleThreadedBuilder.java:53)
+    at org.apache.maven.lifecycle.internal.LifecycleStarter.execute (LifecycleStarter.java:118)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:261)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:173)
+    at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:101)
+    at org.apache.maven.cli.MavenCli.execute (MavenCli.java:906)
+    at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:283)
+    at org.apache.maven.cli.MavenCli.main (MavenCli.java:206)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:77)
+    at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:569)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:255)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:201)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:361)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:314)
+Caused by: java.net.UnknownHostException: spdx.org
+    at sun.nio.ch.NioSocketImpl.connect (NioSocketImpl.java:572)
+    at java.net.SocksSocketImpl.connect (SocksSocketImpl.java:327)
+    at java.net.Socket.connect (Socket.java:633)
+    at sun.security.ssl.SSLSocketImpl.connect (SSLSocketImpl.java:304)
+    at sun.security.ssl.BaseSSLSocketImpl.connect (BaseSSLSocketImpl.java:174)
+    at sun.net.NetworkClient.doConnect (NetworkClient.java:183)
+    at sun.net.www.http.HttpClient.openServer (HttpClient.java:533)
+    at sun.net.www.http.HttpClient.openServer (HttpClient.java:638)
+    at sun.net.www.protocol.https.HttpsClient.<init> (HttpsClient.java:267)
+    at sun.net.www.protocol.https.HttpsClient.New (HttpsClient.java:381)
+    at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.getNewHttpClient (AbstractDelegateHttpsURLConnection.java:196)
+    at sun.net.www.protocol.http.HttpURLConnection.plainConnect0 (HttpURLConnection.java:1262)
+    at sun.net.www.protocol.http.HttpURLConnection.plainConnect (HttpURLConnection.java:1148)
+    at sun.net.www.protocol.http.HttpURLConnection.connect (HttpURLConnection.java:1077)
+    at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect (AbstractDelegateHttpsURLConnection.java:181)
+    at sun.net.www.protocol.http.HttpURLConnection.getInputStream0 (HttpURLConnection.java:1717)
+    at sun.net.www.protocol.http.HttpURLConnection.getInputStream (HttpURLConnection.java:1641)
+    at java.net.HttpURLConnection.getResponseCode (HttpURLConnection.java:529)
+    at sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode (HttpsURLConnectionImpl.java:308)
+    at org.spdx.utility.DownloadCache.processPossibleRedirect (DownloadCache.java:397)
+    at org.spdx.utility.DownloadCache.getUrlInputStreamDirect (DownloadCache.java:248)
+    at org.spdx.utility.DownloadCache.getUrlInputStream (DownloadCache.java:231)
+    at org.spdx.utility.DownloadCache.getUrlInputStream (DownloadCache.java:177)
+    at org.spdx.storage.listedlicense.SpdxListedLicenseWebStore.getUrlInputStream (SpdxListedLicenseWebStore.java:42)
+    at org.spdx.storage.listedlicense.SpdxListedLicenseWebStore.getTocInputStream (SpdxListedLicenseWebStore.java:47)
+    at org.spdx.storage.listedlicense.SpdxListedLicenseModelStore.loadIds (SpdxListedLicenseModelStore.java:161)
+    at org.spdx.storage.listedlicense.SpdxListedLicenseModelStore.<init> (SpdxListedLicenseModelStore.java:117)
+    at org.spdx.storage.listedlicense.SpdxListedLicenseWebStore.<init> (SpdxListedLicenseWebStore.java:38)
+    at org.spdx.library.ListedLicenses.initializeLicenseModelStore (ListedLicenses.java:93)
+    at org.spdx.library.ListedLicenses.<init> (ListedLicenses.java:74)
+    at org.spdx.library.ListedLicenses.getListedLicenses (ListedLicenses.java:137)
+    at org.spdx.library.LicenseInfoFactory.isSpdxListedLicenseId (LicenseInfoFactory.java:350)
+    at org.spdx.utility.license.LicenseExpressionParser.parseSimpleLicenseTokenCompatV2 (LicenseExpressionParser.java:588)
+    at org.spdx.utility.license.LicenseExpressionParser.parseLicenseExpressionCompatV2 (LicenseExpressionParser.java:331)
+    at org.spdx.utility.license.LicenseExpressionParser.parseLicenseExpressionCompatV2 (LicenseExpressionParser.java:164)
+    at org.spdx.library.LicenseInfoFactory.parseSPDXLicenseStringCompatV2 (LicenseInfoFactory.java:112)
+    at org.spdx.maven.utils.SpdxV2LicenseManager.mavenLicenseToSpdxLicense (SpdxV2LicenseManager.java:207)
+    at org.spdx.maven.utils.SpdxV2LicenseManager.mavenLicenseListToSpdxLicense (SpdxV2LicenseManager.java:162)
+    at org.spdx.maven.utils.SpdxV2DocumentBuilder.mavenLicenseListToSpdxLicenseExpression (SpdxV2DocumentBuilder.java:484)
+    at org.spdx.maven.CreateSpdxMojo.getSpdxProjectInfoFromParameters (CreateSpdxMojo.java:978)
+    at org.spdx.maven.CreateSpdxMojo.execute (CreateSpdxMojo.java:600)
+    at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo (DefaultBuildPluginManager.java:126)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute2 (MojoExecutor.java:328)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute (MojoExecutor.java:316)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:212)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:174)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.access$000 (MojoExecutor.java:75)
+    at org.apache.maven.lifecycle.internal.MojoExecutor$1.run (MojoExecutor.java:162)
+    at org.apache.maven.plugin.DefaultMojosExecutionStrategy.execute (DefaultMojosExecutionStrategy.java:39)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:159)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:105)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:73)
+    at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build (SingleThreadedBuilder.java:53)
+    at org.apache.maven.lifecycle.internal.LifecycleStarter.execute (LifecycleStarter.java:118)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:261)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:173)
+    at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:101)
+    at org.apache.maven.cli.MavenCli.execute (MavenCli.java:906)
+    at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:283)
+    at org.apache.maven.cli.MavenCli.main (MavenCli.java:206)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:77)
+    at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:569)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:255)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:201)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:361)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:314)
+[INFO] 
+[INFO] --- moditect:1.3.0.Final:add-module-info (add-module-infos) @ bcel ---
+[INFO] Running jdeps --generate-module-info <CHECKOUT>/target/moditect --add-modules org.apache.commons.io,org.apache.commons.lang3 --module-path <MAVEN_REPOSITORY>/commons-io/commons-io/2.22.0/commons-io-2.22.0.jar:<MAVEN_REPOSITORY>/org/apache/commons/commons-lang3/3.21.0/commons-lang3-3.21.0.jar --multi-release=9 <CHECKOUT>/target/bcel-6.14.0-SNAPSHOT.jar
+writing to <CHECKOUT>/target/moditect/org.apache.bcel/versions/9/module-info.java
+[INFO] Created module descriptor at <CHECKOUT>/target/moditect/generated-sources/org.apache.bcel/module-info.java
+[INFO] 
+[INFO] --- site:3.22.0:attach-descriptor (attach-descriptor) @ bcel ---
+[INFO] Skipping because packaging 'jar' is not pom.
+[INFO] 
+[INFO] --- changes:3.0.0-M3:changes-validate (validate-changes) @ bcel ---
+[INFO] 
+[INFO] --- jacoco:0.8.15:check (check) @ bcel ---
+[INFO] Loading execution data file <CHECKOUT>/target/jacoco.exec
+[INFO] Analyzed bundle 'bcel' with 411 classes
+[INFO] All coverage checks have been met.
+[INFO] 
+[INFO] --- apache-rat:0.18:check (default-cli) @ bcel ---
+[INFO] No issues found.
+[INFO] 
+[INFO] --- japicmp:0.26.3:cmp (default-cli) @ bcel ---
+[INFO] Written file '<CHECKOUT>/target/japicmp/default-cli.diff'.
+[INFO] Written file '<CHECKOUT>/target/japicmp/default-cli.md'.
+[INFO] Created file '<CHECKOUT>/target/japicmp/default-cli.xml'.
+[INFO] Written file '<CHECKOUT>/target/japicmp/default-cli.html'.
+[INFO] 
+[INFO] --- checkstyle:3.6.0:check (default-cli) @ bcel ---
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] >>> pmd:3.28.0:check (default-cli) > :pmd @ bcel >>>
+[INFO] 
+[INFO] --- pmd:3.28.0:pmd (pmd) @ bcel ---
+[INFO] PMD version: 7.28.0
+[WARNING] Warning at <CHECKOUT>/target/pmd/rulesets/001-pmd-ruleset.xml:51:3
+ 49|   <rule ref="category/java/errorprone.xml/AvoidUsingOctalValues"/>
+ 50|   <rule ref="category/java/errorprone.xml/BrokenNullCheck"/>
+ 51|   <rule ref="category/java/errorprone.xml/CheckSkipResult"/>
+       ^^^^^ Discontinue using Rule name category/java/errorprone.xml/CheckSkipResult as it is scheduled for removal from PMD. PMD 8.0.0 will remove support for this Rule.
+
+ 52|   <rule ref="category/java/errorprone.xml/ClassCastExceptionWithToArray"/>
+ 53|   <rule ref="category/java/errorprone.xml/DontUseFloatTypeForLoopIndices"/>
+[WARNING] Warning at <CHECKOUT>/target/pmd/rulesets/001-pmd-ruleset.xml:51:3
+ 49|   <rule ref="category/java/errorprone.xml/AvoidUsingOctalValues"/>
+ 50|   <rule ref="category/java/errorprone.xml/BrokenNullCheck"/>
+ 51|   <rule ref="category/java/errorprone.xml/CheckSkipResult"/>
+       ^^^^^ Discontinue using Rule name category/java/errorprone.xml/CheckSkipResult as it is scheduled for removal from PMD. PMD 8.0.0 will remove support for this Rule.
+
+ 52|   <rule ref="category/java/errorprone.xml/ClassCastExceptionWithToArray"/>
+ 53|   <rule ref="category/java/errorprone.xml/DontUseFloatTypeForLoopIndices"/>
+[WARNING] Adding current platform /usr/lib/jvm/java-17-openjdk-amd64/lib/jrt-fs.jar to auxClasspath, which could be the wrong java version. Please add the correct jrt-fs.jar explicitly to the auxClasspath. See https://docs.pmd-code.org/latest/pmd_languages_java.html#providing-the-auxiliary-classpath Set env var PMD_JAVA_DISABLE_AUX_CLASSPATH_WARNINGS=true to disable this warning.
+[INFO] Rendering content with org.apache.commons:commons-skin:jar:5.3.0 skin
+[INFO] 
+[INFO] <<< pmd:3.28.0:check (default-cli) < :pmd @ bcel <<<
+[INFO] 
+[INFO] 
+[INFO] --- pmd:3.28.0:check (default-cli) @ bcel ---
+[INFO] 
+[INFO] >>> spotbugs:4.10.5.0:check (default-cli) > :spotbugs @ bcel >>>
+[INFO] 
+[INFO] --- spotbugs:4.10.5.0:spotbugs (spotbugs) @ bcel ---
+[INFO] Done SpotBugs Analysis....
+[INFO] Skipping com.github.spotbugs:spotbugs-maven-plugin:4.10.5.0:spotbugs report goal
+[INFO] 
+[INFO] <<< spotbugs:4.10.5.0:check (default-cli) < :spotbugs @ bcel <<<
+[INFO] 
+[INFO] 
+[INFO] --- spotbugs:4.10.5.0:check (default-cli) @ bcel ---
+[INFO] BugInstance size is 0
+[INFO] Error size is 0
+[INFO] No errors/warnings found
+[INFO] 
+[INFO] >>> javadoc:3.12.0:javadoc (default-cli) > generate-sources @ bcel >>>
+[INFO] 
+[INFO] --- enforcer:3.6.3:enforce (enforce-maven-version) @ bcel ---
+[INFO] 
+[INFO] --- enforcer:3.6.3:enforce (enforce-java-version) @ bcel ---
+[INFO] 
+[INFO] --- apache-rat:0.18:check (rat-check) @ bcel ---
+[INFO] No issues found.
+[INFO] 
+[INFO] --- artifact:3.7.0:check-buildplan (check-buildplan) @ bcel ---
+[INFO] No known issue in 20 plugins
+[INFO] 
+[INFO] --- build-helper:3.6.2:parse-version (parse-version) @ bcel ---
+[INFO] 
+[INFO] --- antrun:3.2.0:run (javadoc.resources) @ bcel ---
+[INFO] Executing tasks
+[INFO] Executed tasks
+[INFO] 
+[INFO] <<< javadoc:3.12.0:javadoc (default-cli) < generate-sources @ bcel <<<
+[INFO] 
+[INFO] 
+[INFO] --- javadoc:3.12.0:javadoc (default-cli) @ bcel ---
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  02:27 min
+[INFO] Finished at: 2026-10-22T04:56:51-07:00
+[INFO] ------------------------------------------------------------------------

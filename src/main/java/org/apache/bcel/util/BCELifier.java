@@ -23,11 +23,29 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.bcel.Const;
 import org.apache.bcel.Repository;
+import org.apache.bcel.classfile.BootstrapMethod;
+import org.apache.bcel.classfile.BootstrapMethods;
 import org.apache.bcel.classfile.ClassParser;
 import org.apache.bcel.classfile.Code;
+import org.apache.bcel.classfile.Constant;
+import org.apache.bcel.classfile.ConstantCP;
+import org.apache.bcel.classfile.ConstantClass;
+import org.apache.bcel.classfile.ConstantDouble;
+import org.apache.bcel.classfile.ConstantFloat;
+import org.apache.bcel.classfile.ConstantInteger;
+import org.apache.bcel.classfile.ConstantLong;
+import org.apache.bcel.classfile.ConstantMethodHandle;
+import org.apache.bcel.classfile.ConstantMethodType;
+import org.apache.bcel.classfile.ConstantModule;
+import org.apache.bcel.classfile.ConstantNameAndType;
+import org.apache.bcel.classfile.ConstantPackage;
+import org.apache.bcel.classfile.ConstantString;
+import org.apache.bcel.classfile.ConstantUtf8;
 import org.apache.bcel.classfile.ConstantValue;
 import org.apache.bcel.classfile.ExceptionTable;
 import org.apache.bcel.classfile.Field;
@@ -70,6 +88,7 @@ public class BCELifier extends org.apache.bcel.classfile.EmptyVisitor {
     // N.B we use the class so renames will be detected by the compiler/IDE
     private static final String BASE_PACKAGE = Const.class.getPackage().getName();
     private static final String CONSTANT_PREFIX = Const.class.getSimpleName() + ".";
+    private static final int STATEMENTS_PER_METHOD = 1000;
 
     /**
      * Checks that a name from the parsed class file is a dotted sequence of valid Java identifiers before it is
@@ -150,6 +169,61 @@ public class BCELifier extends org.apache.bcel.classfile.EmptyVisitor {
             }
         }
         return "new Type[] { " + args.toString() + " }";
+    }
+
+    private static String printConstant(final Constant constant) {
+        final String arguments;
+        switch (constant.getTag()) {
+        case Const.CONSTANT_Utf8:
+            arguments = '"' + Utility.convertString(((ConstantUtf8) constant).getBytes()) + '"';
+            break;
+        case Const.CONSTANT_Integer:
+            arguments = Integer.toString(((ConstantInteger) constant).getBytes());
+            break;
+        case Const.CONSTANT_Float:
+            arguments = "Float.intBitsToFloat(" + Float.floatToRawIntBits(((ConstantFloat) constant).getBytes()) + ")";
+            break;
+        case Const.CONSTANT_Long:
+            arguments = ((ConstantLong) constant).getBytes() + "L";
+            break;
+        case Const.CONSTANT_Double:
+            arguments = "Double.longBitsToDouble(" + Double.doubleToRawLongBits(((ConstantDouble) constant).getBytes()) + "L)";
+            break;
+        case Const.CONSTANT_Class:
+            arguments = Integer.toString(((ConstantClass) constant).getNameIndex());
+            break;
+        case Const.CONSTANT_String:
+            arguments = Integer.toString(((ConstantString) constant).getStringIndex());
+            break;
+        case Const.CONSTANT_Fieldref:
+        case Const.CONSTANT_Methodref:
+        case Const.CONSTANT_InterfaceMethodref:
+        case Const.CONSTANT_Dynamic:
+        case Const.CONSTANT_InvokeDynamic:
+            final ConstantCP reference = (ConstantCP) constant;
+            arguments = reference.getClassIndex() + ", " + reference.getNameAndTypeIndex();
+            break;
+        case Const.CONSTANT_NameAndType:
+            final ConstantNameAndType nameAndType = (ConstantNameAndType) constant;
+            arguments = nameAndType.getNameIndex() + ", " + nameAndType.getSignatureIndex();
+            break;
+        case Const.CONSTANT_MethodHandle:
+            final ConstantMethodHandle handle = (ConstantMethodHandle) constant;
+            arguments = handle.getReferenceKind() + ", " + handle.getReferenceIndex();
+            break;
+        case Const.CONSTANT_MethodType:
+            arguments = Integer.toString(((ConstantMethodType) constant).getDescriptorIndex());
+            break;
+        case Const.CONSTANT_Module:
+            arguments = Integer.toString(((ConstantModule) constant).getNameIndex());
+            break;
+        case Const.CONSTANT_Package:
+            arguments = Integer.toString(((ConstantPackage) constant).getNameIndex());
+            break;
+        default:
+            throw new IllegalArgumentException("Unsupported constant: " + constant);
+        }
+        return "new " + constant.getClass().getSimpleName() + "(" + arguments + ")";
     }
 
     static String printFlags(final int flags) {
@@ -233,6 +307,52 @@ public class BCELifier extends org.apache.bcel.classfile.EmptyVisitor {
         this.constantPoolGen = new ConstantPoolGen(this.clazz.getConstantPool());
     }
 
+    private void printArrayInitializer(final String type, final String name, final int length, final List<String> statements) {
+        printWriter.println("  private " + type + "[] create" + name + "() {");
+        printWriter.println("    " + type + "[] values = new " + type + "[" + length + "];");
+        for (int start = 0; start < statements.size(); start += STATEMENTS_PER_METHOD) {
+            printWriter.println("    init" + name + "_" + start + "(values);");
+        }
+        printWriter.println("    return values;");
+        printWriter.println("  }");
+        printWriter.println();
+        // Keep generated methods below the JVM method-size limit, including large bootstrap argument arrays.
+        for (int start = 0; start < statements.size(); start += STATEMENTS_PER_METHOD) {
+            printWriter.println("  private void init" + name + "_" + start + "(" + type + "[] values) {");
+            for (int i = start; i < Math.min(start + STATEMENTS_PER_METHOD, statements.size()); i++) {
+                printWriter.println("    " + statements.get(i));
+            }
+            printWriter.println("  }");
+            printWriter.println();
+        }
+    }
+
+    private void printBootstrapMethods(final BootstrapMethods bootstrapMethods) {
+        final List<String> statements = new ArrayList<>();
+        final BootstrapMethod[] methods = bootstrapMethods.getBootstrapMethods();
+        for (int i = 0; i < methods.length; i++) {
+            final BootstrapMethod method = methods[i];
+            final int[] arguments = method.getBootstrapArguments();
+            statements.add("values[" + i + "] = new BootstrapMethod(" + method.getBootstrapMethodRef() + ", new int[" + arguments.length + "]);");
+            for (int j = 0; j < arguments.length; j++) {
+                statements.add("values[" + i + "].getBootstrapArguments()[" + j + "] = " + arguments[j] + ";");
+            }
+        }
+        printArrayInitializer("BootstrapMethod", "BootstrapMethods", methods.length, statements);
+    }
+
+    private void printConstantPool() {
+        // Bootstrap methods and invokedynamic instructions refer to the original constant pool indices.
+        final Constant[] constants = clazz.getConstantPool().getConstantPool();
+        final List<String> statements = new ArrayList<>();
+        for (int i = 0; i < constants.length; i++) {
+            if (constants[i] != null) {
+                statements.add("values[" + i + "] = " + printConstant(constants[i]) + ";");
+            }
+        }
+        printArrayInitializer("Constant", "Constants", constants.length, statements);
+    }
+
     private void printCreate() {
         printWriter.println("  public void create(OutputStream out) throws IOException {");
         final Field[] fields = clazz.getFields();
@@ -308,6 +428,7 @@ public class BCELifier extends org.apache.bcel.classfile.EmptyVisitor {
         final String superName = clazz.getSuperclassName();
         final String packageName = clazz.getPackageName();
         final String inter = Utility.printArray(escape(clazz.getInterfaceNames()), false, true);
+        final BootstrapMethods bootstrapMethods = clazz.getAttribute(Const.ATTR_BOOTSTRAP_METHODS);
         if (StringUtils.isNotEmpty(packageName)) {
             className = className.substring(packageName.length() + 1);
             printWriter.println("package " + packageName + ";");
@@ -324,16 +445,29 @@ public class BCELifier extends org.apache.bcel.classfile.EmptyVisitor {
         printWriter.println("  private ClassGen           _cg;");
         printWriter.println();
         printWriter.println("  public " + className + "Creator() {");
+        if (bootstrapMethods != null) {
+            printWriter.println("    _cp = new ConstantPoolGen(createConstants());");
+        }
         printWriter.println("    _cg = new ClassGen(\"" + Utility.convertString(packageName.isEmpty() ? className : packageName + "." + className) + "\", \""
             + Utility.convertString(superName) + "\", \"" + Utility.convertString(clazz.getSourceFileName()) + "\", "
-            + printFlags(clazz.getAccessFlags(), FLAGS.CLASS) + ", " + "new String[] { " + inter + " });");
+            + printFlags(clazz.getAccessFlags(), FLAGS.CLASS) + ", " + "new String[] { " + inter + " }" + (bootstrapMethods == null ? "" : ", _cp") + ");");
         printWriter.println("    _cg.setMajor(" + clazz.getMajor() + ");");
         printWriter.println("    _cg.setMinor(" + clazz.getMinor() + ");");
         printWriter.println();
-        printWriter.println("    _cp = _cg.getConstantPool();");
+        if (bootstrapMethods == null) {
+            printWriter.println("    _cp = _cg.getConstantPool();");
+        }
         printWriter.println("    _factory = new InstructionFactory(_cg, _cp);");
+        if (bootstrapMethods != null) {
+            printWriter.println("    _cg.addAttribute(new BootstrapMethods(" + bootstrapMethods.getNameIndex() + ", " + bootstrapMethods.getLength()
+                + ", createBootstrapMethods(), _cp.getConstantPool()));");
+        }
         printWriter.println("  }");
         printWriter.println();
+        if (bootstrapMethods != null) {
+            printConstantPool();
+            printBootstrapMethods(bootstrapMethods);
+        }
         printCreate();
         final Field[] fields = clazz.getFields();
         if (fields.length > 0) {

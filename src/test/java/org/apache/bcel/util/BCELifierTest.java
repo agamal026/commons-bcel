@@ -18,6 +18,7 @@
  */
 package org.apache.bcel.util;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -32,12 +33,15 @@ import java.io.PrintStream;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.apache.bcel.AbstractTest;
 import org.apache.bcel.Const;
 import org.apache.bcel.HelloWorldCreator;
+import org.apache.bcel.classfile.BootstrapMethod;
+import org.apache.bcel.classfile.BootstrapMethods;
 import org.apache.bcel.classfile.ClassParser;
 import org.apache.bcel.classfile.ConstantValue;
 import org.apache.bcel.classfile.Field;
@@ -56,14 +60,18 @@ import org.apache.bcel.generic.Type;
 import org.apache.commons.lang3.SystemProperties;
 import org.apache.commons.lang3.SystemUtils;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.condition.DisabledForJreRange;
-import org.junit.jupiter.api.condition.JRE;
 import org.junit.jupiter.api.io.TempDir;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
 class BCELifierTest extends AbstractTest {
+
+    private static final class TestLoader extends ClassLoader {
+        Class<?> define(final byte[] bytes) {
+            return defineClass(null, bytes, 0, bytes.length);
+        }
+    }
 
     private static Pattern CANON1 = Pattern.compile("#\\d+"); // numbers may vary in length
     private static Pattern CANON2 = Pattern.compile(" +"); // collapse spaces
@@ -126,6 +134,17 @@ class BCELifierTest extends AbstractTest {
 
     private Path getJavaHomeBinPath() {
         return SystemUtils.getJavaHomePath().resolve("bin");
+    }
+
+    private JavaClass roundTrip(final JavaClass original, final Path directory) throws Exception {
+        final String className = original.getClassName();
+        final String creatorFileName = className + "Creator.java";
+        final ByteArrayOutputStream creator = new ByteArrayOutputStream();
+        new BCELifier(original, creator).start();
+        Files.write(directory.resolve(creatorFileName), creator.toByteArray());
+        exec(directory.toFile(), getAppJavaC(), "-cp", CLASSPATH, creatorFileName);
+        exec(directory.toFile(), getAppJava(), "-cp", CLASSPATH, className + "Creator");
+        return new ClassParser(directory.resolve(className + JavaClass.EXTENSION).toString()).parse();
     }
 
     @ParameterizedTest
@@ -409,9 +428,101 @@ class BCELifierTest extends AbstractTest {
         "target/test-classes/Java8Example2.class",
     // @formatter:on
     })
-    @DisabledForJreRange(min = JRE.JAVA_25)
-    void testJavapCompareJava25KnownBroken(final String pathToClass) throws Exception {
+    void testJavapCompareJava8(final String pathToClass) throws Exception {
         testClassOnPath(pathToClass);
+    }
+
+    @ParameterizedTest
+    @ValueSource(strings = { "class", "interface" })
+    void testLambdaRoundTrip(final String kind, @TempDir final Path directory) throws Exception {
+        final Path input = Files.createDirectory(directory.resolve("input"));
+        final Path output = Files.createDirectory(directory.resolve("output"));
+        final String source = String.join(EOL,
+            "public " + kind + " LambdaExample {",
+            "  public static int fixed() {",
+            "    java.util.function.IntSupplier supplier = () -> 7;",
+            "    return supplier.getAsInt();",
+            "  }",
+            "  public static int captured(int value) {",
+            "    java.util.function.IntSupplier supplier = () -> value + 3;",
+            "    return supplier.getAsInt();",
+            "  }",
+            "  public static boolean branch(int minimum, boolean longer) {",
+            "    String value = longer ? \"hello\" : \"hi\";",
+            "    java.util.function.Predicate<String> predicate = s -> s.length() > minimum;",
+            "    return predicate.test(value);",
+            "  }",
+            "}");
+        Files.write(input.resolve("LambdaExample.java"), source.getBytes(StandardCharsets.UTF_8));
+        exec(input.toFile(), getAppJavaC(), "-source", "8", "-target", "8", "LambdaExample.java");
+        final byte[] originalBytes = Files.readAllBytes(input.resolve("LambdaExample.class"));
+        final JavaClass original = new ClassParser(input.resolve("LambdaExample.class").toString()).parse();
+        final Method branch = Arrays.stream(original.getMethods()).filter(method -> "branch".equals(method.getName())).findFirst().get();
+        assertNotNull(branch.getCode().getStackMap());
+        assertTrue(branch.getCode().getStackMap().getStackMap().length > 0);
+
+        final JavaClass regenerated = roundTrip(original, output);
+        assertEquals(original.getMajor(), regenerated.getMajor());
+        assertEquals(original.getMinor(), regenerated.getMinor());
+        final byte[] regeneratedBytes = Files.readAllBytes(output.resolve("LambdaExample.class"));
+        for (final byte[] bytes : new byte[][] { originalBytes, regeneratedBytes }) {
+            // Define the exact bytes instead of letting a parent loader return the original class.
+            final Class<?> type = new TestLoader().define(bytes);
+            assertEquals(7, type.getMethod("fixed").invoke(null));
+            assertEquals(8, type.getMethod("captured", int.class).invoke(null, 5));
+            assertEquals(-1, type.getMethod("captured", int.class).invoke(null, -4));
+            assertEquals(true, type.getMethod("branch", int.class, boolean.class).invoke(null, 2, true));
+            assertEquals(false, type.getMethod("branch", int.class, boolean.class).invoke(null, 2, false));
+            assertEquals(false, type.getMethod("branch", int.class, boolean.class).invoke(null, 6, true));
+            assertEquals(true, type.getMethod("branch", int.class, boolean.class).invoke(null, 0, false));
+        }
+    }
+
+    @Test
+    void testLargeBootstrapConstantPool(@TempDir final Path directory) throws Exception {
+        final ClassGen cg = new ClassGen("LargePool", "java.lang.Object", "LargePool.java", Const.ACC_PUBLIC | Const.ACC_SUPER, new String[] {});
+        cg.setMajor(Const.MAJOR_1_8);
+        cg.setMinor(Const.MINOR_1_8);
+        final ConstantPoolGen cp = cg.getConstantPool();
+        for (int i = 0; i < 8192; i++) {
+            cp.addInteger(i);
+        }
+        cg.addEmptyConstructor(Const.ACC_PUBLIC);
+        cg.addAttribute(new BootstrapMethods(cp.addUtf8("BootstrapMethods"), 2, new BootstrapMethod[0], cp.getConstantPool()));
+        final JavaClass original = cg.getJavaClass();
+        assertNotNull(new TestLoader().define(original.getBytes()).getDeclaredConstructor().newInstance());
+        final JavaClass regenerated = roundTrip(original, directory);
+        assertNotNull(new TestLoader().define(regenerated.getBytes()).getDeclaredConstructor().newInstance());
+    }
+
+    @ParameterizedTest
+    @CsvSource({ "8192, 0", "1, 8192" })
+    void testLargeBootstrapMethods(final int methodCount, final int argumentCount, @TempDir final Path directory) throws Exception {
+        final JavaClass template = BCELifier.getJavaClass("Java8Example");
+        final BootstrapMethods templateMethods = template.getAttribute(Const.ATTR_BOOTSTRAP_METHODS);
+        final BootstrapMethod bootstrapMethod = templateMethods.getBootstrapMethods()[0];
+        final ConstantPoolGen cp = new ConstantPoolGen(template.getConstantPool());
+        final ClassGen cg = new ClassGen("LargeBootstrapMethods", "java.lang.Object", "LargeBootstrapMethods.java", Const.ACC_PUBLIC | Const.ACC_SUPER,
+            new String[] {}, cp);
+        cg.setMajor(Const.MAJOR_1_8);
+        cg.setMinor(Const.MINOR_1_8);
+        cg.addEmptyConstructor(Const.ACC_PUBLIC);
+        final int[] arguments = new int[argumentCount];
+        Arrays.fill(arguments, bootstrapMethod.getBootstrapArguments()[0]);
+        final BootstrapMethod[] methods = new BootstrapMethod[methodCount];
+        Arrays.setAll(methods, i -> new BootstrapMethod(bootstrapMethod.getBootstrapMethodRef(), arguments));
+        cg.addAttribute(new BootstrapMethods(cp.addUtf8("BootstrapMethods"), 2 + methodCount * (4 + 2 * argumentCount), methods, cp.getConstantPool()));
+        final JavaClass original = cg.getJavaClass();
+        assertNotNull(new TestLoader().define(original.getBytes()).getDeclaredConstructor().newInstance());
+        final JavaClass regenerated = roundTrip(original, directory);
+        assertNotNull(new TestLoader().define(regenerated.getBytes()).getDeclaredConstructor().newInstance());
+        final BootstrapMethods actual = regenerated.getAttribute(Const.ATTR_BOOTSTRAP_METHODS);
+        assertNotNull(actual);
+        assertEquals(methodCount, actual.getBootstrapMethods().length);
+        for (final BootstrapMethod method : actual) {
+            assertEquals(bootstrapMethod.getBootstrapMethodRef(), method.getBootstrapMethodRef());
+            assertArrayEquals(arguments, method.getBootstrapArguments());
+        }
     }
 
     @Test

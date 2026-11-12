@@ -294,6 +294,10 @@ final class BCELFactory extends EmptyVisitor {
     @Override
     public void visitInvokeInstruction(final InvokeInstruction i) {
         final short opcode = i.getOpcode();
+        if (opcode == Const.INVOKEDYNAMIC) {
+            printWriter.println("il.append(new INVOKEDYNAMIC(" + i.getIndex() + "));");
+            return;
+        }
         final String className = i.getClassName(constantPoolGen);
         final String methodName = i.getMethodName(constantPoolGen);
         final Type type = i.getReturnType(constantPoolGen);
